@@ -30,4 +30,19 @@
     .show-menu {
         top: var(--header-height);
     }
+
+    /*  ACTIVE MENU */
+    .active-link {
+        position: relative;
+    }
+
+    .active-link::after {
+        content: '';
+        position: absolute;
+        bottom: -.6rem;
+        left: 0;
+        width: 65%;
+        height: 3px;
+        background-color: var(--first-color-lighten);
+    }
 }
