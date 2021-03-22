@@ -67,9 +67,12 @@ body {
 }
 
 /*  BASE   ===========*/
+
 *,::before,::after {
     box-sizing: border-box;
 }
+
+/*  HEADINGs   ===========*/
 
 h1,h2,h3,ul,p {
     margin: 0;
@@ -95,6 +98,7 @@ img {
 }
 
 /*  CLASS CSS   ===========*/
+
 .section {
     padding: 4rem 0 2rem;
 }
@@ -113,4 +117,66 @@ img {
     display: block;
     font-size: var(--smaller-font-size);
     font-weight: var(--font-semi-bold);
+}
+
+/*  LAYOUT  ===========*/
+
+.bd-container {
+    max-width: 1024px;
+    width: calc(100% - 2rem);
+    margin-left: var(--mb-2);
+    margin-right: var(--mb-2);
+}
+
+.bd-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.l-header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    background-color: #000;
+}
+
+/*  Main nav  ===========*/
+
+.nav {
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__item {
+    margin-bottom: var(--mb-3);
+}
+
+.nav__link {
+    color: var(--first-color-lighten);
+    transition: .3s;
+}
+
+.nav__link:hover {
+    color: var(--first-color-light);
+}
+
+/*  MOBILE NAV   ===========*/
+
+.nav__logo, .nav__toggle {
+    color: var(--first-color-lighten);
+}
+
+.nav__toggle {
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+/* SHOW MENU */
+
+.show-menu {
+    top: var(--header-height);
 }

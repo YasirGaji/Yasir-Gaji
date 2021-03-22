@@ -1,5 +1,7 @@
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px) {
     :root {
+        --header-height: 3rem;
+
         --biggest-font-size: 4.25rem;
         --h1-font-size: 2.25rem;
         --h2-font-size: 1.5rem;
@@ -7,5 +9,21 @@
         --normal-font-size: 1rem;
         --small-font-size: .875rem;
         --smaller-font-size: .813rem;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .nav__menu {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        padding-top: 1.5rem;
+        text-align: center;
+        background-color: #000;
+        transition: .4s;
+        box-shadow: 0 2px 4px rgba(0,0,0,.1);
+        border-radius: 0 0 1rem 1rem ;
     }
 }
