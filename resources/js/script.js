@@ -12,3 +12,11 @@ const showMenu = (toggleId,navId) =>{
 }
 
 showMenu('nav-toggle','nav-menu')
+
+// REMOVE BUTTON FOR MOBILE MENU
+
+const navlink = document.querySelectorAll('nav__link');
+
+function linkAction() {
+    const navMenu = document.getElementById('nav-menu')
+}
