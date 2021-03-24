@@ -359,7 +359,7 @@ img {
     border-radius: .5rem;
 }
 
-/*  HOME SECTION  ===========*/
+/*  QUALIFICATION SECTION  ===========*/
 .qualification__container {
     row-gap: 2.5rem;
 }
@@ -396,4 +396,36 @@ img {
 
 .qualification__work {
     display: block;
+}
+
+/*  SERVICES SECTION  ===========*/
+.services__data {
+    padding: 3rem 1rem;
+    background-color: #fff;
+    border-radius: .5rem;
+    text-align: center;
+    transition: .4s;
+    box-shadow: 0 4px 6px rgba(174, 190, 205, .3);
+}
+
+.services__icon, .services__title {
+    margin-bottom: var(--mb-2);
+    color: var(--first-color);
+}
+
+.services__icon {
+    font-size: 3rem;
+}
+
+.services__title {
+    font-size: var(--h3-font-size);
+}
+
+.services__description {
+    margin-bottom: var(--mb-4);
+}
+
+.services__data:hover {
+    transform: translateY(-.5rem);
+    box-shadow: 0 6px 8px rgba(123, 111, 113, .4);
 }
