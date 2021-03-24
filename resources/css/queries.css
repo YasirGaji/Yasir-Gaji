@@ -46,5 +46,10 @@
         background-color: rgba(43, 13, 2, 0.933);
     }
 
+    .section-title {
+        font-size: var(--h1-font-size);
+        color: var(--first-color);
+        margin-bottom: var(--mb-3);
+    }
     
 }
