@@ -16,8 +16,9 @@
     --header-height: 3rem;
 
     /*  COLOR   ===========*/
-    --first-color: #3e0e12;
+    --first-color: #000000;
     --first-color-dark: #2f0a0d;
+    --first-color-dark2: #000000;
     --text-color: #524748;
     --first-color-light: #7b6f71;
     --first-color-lighten: #fbf9f9;
@@ -348,6 +349,16 @@ img {
     color: var(--first-color-lighten);
 }
 
+.button-link {
+    background: none;
+    color: var(--first-color);
+    padding: 0;
+}
+
+.button-link:hover {
+    background: none;
+}
+
 
 /* ABOUT SECTION  ===========*/
 
@@ -447,7 +458,7 @@ img {
 /*  ONGOING PROJECTS SECTION  ===========*/
 .project__container {
     padding: 1.5rem 1rem;
-    background-color: var(--first-color-dark);
+    background-color: var(--first-color-dark2);
     color: var(--first-color-lighten);
     border-radius: .5rem;
     text-align: center;
@@ -470,3 +481,47 @@ img {
 }
 
 /*  PORTFOLIO SECTION  ===========*/
+.portfolio__nav {
+    text-align: center;
+    margin-bottom: var(--mb-3);
+}
+
+.portfolio__item {
+    margin: 0 var(--mb-2);
+    cursor: pointer;
+}
+
+.portfolio__content {
+    background-color: #fff;
+    border-radius: .5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(174, 190, 205, .3);
+}
+
+.portfolio__img {
+    width: 100%;
+    transition: .4s;
+}
+
+.portfolio__data {
+    padding: 1.5rem;
+}
+
+.portfolio__subtitle {
+    font-size: var(--small-font-size);
+    color: var(--first-color-light);
+}
+
+.portfolio__title {
+    font-size: var(--h3-font-size);
+    color: var(--first-color);
+    margin: var(--mb-2) 0;
+}
+
+.portfolio__content:hover {
+    box-shadow: 0 6px 8px rgba(123, 111, 113, .4);
+}
+
+.portfolio__content:hover .portfolio__img {
+    transform: scale(1.02)
+}

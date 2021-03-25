@@ -62,3 +62,5 @@ function scrollTop() {
 }
 
 window.addEventListener('scroll', scrollTop)
+
+// MIXTUP FILTER FOR PORTFOLIO 
