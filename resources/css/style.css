@@ -525,3 +525,10 @@ img {
 .portfolio__content:hover .portfolio__img {
     transform: scale(1.02)
 }
+
+/*  ACTIVE MENU PORTFOLIOS  ===========*/
+
+.active-portfolio {
+    color: var(--first-color-dark);
+    font-weight: var(--font-semi-bold);
+}

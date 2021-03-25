@@ -61,6 +61,28 @@ function scrollTop() {
     if(this.scrollY >= 560) scrollTop.classList.add('show-scroll'); else scrollTop.classList.remove('show-scroll')
 }
 
-window.addEventListener('scroll', scrollTop)
+window.addEventListener('scroll', scrollTop);
+
+
 
 // MIXTUP FILTER FOR PORTFOLIO 
+const mixer = mixitup('.portfolio__container', {
+    selectors: {
+        target: '.portfolio__content'
+    },
+    animation: {
+        duration: 400
+    }
+});
+
+//LINK ACTIVE PORTFOLIO
+const linkPortfolio = document.querySelectorAll('.portfolio__item')
+
+function activePortfolio() {
+    if(linkPortfolio){
+        linkPortfolio.forEach(i => i.classList.remove('active-portfoliio'))
+        this.classList.add('active-portfolio')
+    }
+}
+
+linkPortfolio.forEach(i => i.addEventListener('click', activePortfolio))
