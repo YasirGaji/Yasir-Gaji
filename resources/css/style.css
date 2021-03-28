@@ -532,3 +532,28 @@ img {
     color: var(--first-color-dark);
     font-weight: var(--font-semi-bold);
 }
+
+/*  TESTIMONIAL  ===========*/
+.testimonial__content {
+    display: grid;
+    background-color: var(--first-color-dark2);
+    color: var(--first-color-lighten);
+    border-radius: .5rem;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(47,10,13,.25);
+}
+
+.testimonial__img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    justify-self: center;
+    margin-bottom: var(--mb-1);
+}
+
+.testimonial__client {
+    font-size: var(--small-font-size);
+    color: var(--first-color-light);
+    margin-bottom: var(--mb-2);
+}

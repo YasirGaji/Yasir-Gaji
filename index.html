@@ -13,7 +13,7 @@
     <meta name="msapplication-config" content="resources/favicon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 
-    <link rel="stylesheet" href="outsourced/css/normalize.css">
+    <link rel="stylesheet" href="outsourced/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="outsourced/css/grid.css">
     <link rel="stylesheet" href="outsourced/css/animate.css">
     <link rel="stylesheet" href="outsourced/css/ionicons.min.css">
@@ -389,28 +389,30 @@
         <span class="section-subtitle">What My Clients Say</span>
         <h2 class="section-title">Testimonial</h2>
 
-        <div class="testimonial__container">
-            <div>
-                <div class="testimonial__content">
+        <div class="testimonial__container swiper-container">
+            <div class="swiper-wrapper"> 
+                <div class="testimonial__content swiper-slide">
                     <img src="resources/img/work1.jpg" alt="" class="testimonial__img">
                     <h3 class="testimonial__title">Ochije Nanni</h3>
                     <span class="testimonial__client">Client</span>
-
+                    <p class="testimonial__description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit voluptates illum accusantium molestias. Quasi, dolore?</p>
                 </div>
 
-                <div class="testimonial__content">
+                <div class="testimonial__content swiper-slide">
                     <img src="resources/img/work1.jpg" alt="" class="testimonial__img">
                     <h3 class="testimonial__title">Ochije Nanni</h3>
                     <span class="testimonial__client">Client</span>
-                    
+                    <p class="testimonial__description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit voluptates illum accusantium molestias. Quasi, dolore?</p>
                 </div>
 
-                <div class="testimonial__content">
+                <div class="testimonial__content swiper-slide">
                     <img src="resources/img/work1.jpg" alt="" class="testimonial__img">
                     <h3 class="testimonial__title">Ochije Nanni</h3>
                     <span class="testimonial__client">Client</span>
-                    
+                    <p class="testimonial__description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit voluptates illum accusantium molestias. Quasi, dolore?</p>
                 </div>
+                <div class="swiper-pagination"></div>
+
             </div>
         </div>
     </section>
@@ -418,6 +420,9 @@
 
     <!-- MIXT-UP FILTER -->
     <script src="outsourced/js/mixitup.min.js"></script>
+
+    <!-- SWIPER CAROUSEL -->
+    <script src="outsourced/js/swiper-bundle.min.js"></script>
 
     <script src="resources/js/script.js"></script>
 </body>
