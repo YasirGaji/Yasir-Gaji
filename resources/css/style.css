@@ -630,3 +630,44 @@ img {
 .contact__button {
     
 }
+
+/*  FOOTER  ===========*/
+.footer {
+    background-color: var(--first-color-dark2);
+    color: var(--first-color-lighten);
+    text-align: center;
+}
+
+.footer__container {
+    padding: 3rem 0;
+}
+
+.footer__title {
+    font-size: var(--h1-font-size);
+    margin-bottom: var(--mb-1);
+    font-weight: var(--font-semi-bold);
+}
+
+.footer__description {
+    margin-bottom: var(--mb-3);
+}
+
+.footer__social {
+    margin-bottom: var(--mb-6);
+}
+
+.footer__link {
+    font-size: 1.4rem;
+    color: var(--first-color-lighten);
+    margin: 0 var(--mb-1);
+    transition: .3s;
+}
+
+.footer__link:hover {
+    color: var(--first-color-light);
+}
+
+.footer__copy {
+    font-size: var(--small-font-size);
+    color: var(--first-color-light);
+}
