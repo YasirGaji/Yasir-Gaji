@@ -565,3 +565,68 @@ img {
 .swiper-pagination-bullet-active {
     background-color: var(--first-color);
 }
+
+/*  CONTACT ME  ===========*/
+.contact__container {
+    row-gap: 2.5rem;
+}
+
+.contact__content {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.contact__box {
+    background-color: #fff;
+    border-radius: .5rem;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(174, 190, 205, .3);
+}
+
+.contact__icon, .contact__title {
+    color: var(--first-color);
+}
+
+.contact__icon {
+    font-size: 2rem;
+}
+
+.contact__title {
+    font-size: var(--h3-font-size);
+    margin: var(--mb-1) 0;
+}
+
+.contact__social {
+    color: var(--first-color-light);
+    font-size: 1.25rem;
+    margin: 0 var(--mb-1);
+}
+
+.contact__box:hover {
+    box-shadow: 0 6px 8px rgba(123, 111, 113, .4);
+}
+
+.contact__input, .contact__button {
+    outline: none;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+.contact__input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--first-color-lighten);
+    box-shadow: 0 4px 6px rgba(174, 190, 205, .3);
+    color: var(--first-color);
+    border-radius: .5rem;
+    margin-bottom: var(--mb-1);
+}
+
+.contact__button {
+    cursor: pointer;
+    border: none;
+}
+
+.contact__button {
+    
+}
