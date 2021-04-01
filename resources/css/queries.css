@@ -60,6 +60,18 @@ body {
         margin: 0;
     }
 
+    /* .home {
+        background-image: (url(img/hero.jpg);
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        background-attachment: fixed;
+    } */
+
+    .home__img {
+        display: none;
+    }
+
     .section {
         padding-top: 6rem;
     }
@@ -99,12 +111,12 @@ body {
         font-size: 2rem;
     }
 
-    .home__social {
+    #social {
         flex-direction: row;
         align-items: center;
     }
 
-    .home__socia-icon {
+    .home__social-icon {
         margin-right: var(--mb-4);
         margin-bottom: 0;
     }
@@ -155,6 +167,7 @@ body {
 }
 
 @media screen and (min-width: 1024px) {
+
     .bd-container {
         margin-left: auto;
         margin-right: auto;
@@ -163,6 +176,7 @@ body {
     .qualification__container {
         column-gap: 6rem;
     }
+    
 }
 
 
@@ -209,13 +223,12 @@ body {
 }
 
 @media screen and (min-width: 576px){
-    .home__img img {
+    /* .home__img img {
         width: 330px;
-    }
+    } */
 
     .about__container,
     .qualification__container,
-    .services__container,
     .portfolio__container {
         grid-template-columns: repeat(2, 1fr);
     }

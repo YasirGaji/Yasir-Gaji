@@ -293,9 +293,9 @@ img {
     bottom: 0;
 } 
 
-/* .home__img img {
+ .home__img img {
     width: 340px;
-} */
+} 
 
 #social {
     display: flex;
