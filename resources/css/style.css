@@ -293,8 +293,12 @@ img {
     bottom: 0;
 } 
 
+.home__img2 {
+    display: none;
+}
+
  .home__img img {
-    width: 340px;
+    width: 3400px;
 } 
 
 #social {
@@ -448,6 +452,7 @@ img {
 
 .services__description {
     margin-bottom: var(--mb-4);
+    padding: auto;
 }
 
 .services__data:hover {
