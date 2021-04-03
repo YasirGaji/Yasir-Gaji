@@ -100,11 +100,11 @@ const mySwiper = new Swiper('.testimonial__container', {
     
     breakpoints: {
         640: {
-            slidesPerview: 2,
+            slidesPerView: 2,
         },
 
         1024: {
-            slidesPerview: 3,
+            slidesPerView: 3,
         }
     }
 })
