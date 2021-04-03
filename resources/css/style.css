@@ -632,8 +632,16 @@ img {
     border: none;
 }
 
-.contact__button {
-    
+.contact__inputs {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 1rem;
+}
+
+.contact::placeholder {
+    color: var(--first-color-light);
+    font-family: var(--body-font);
+    font-weight: var(--font-semi-bold);
 }
 
 /*  FOOTER  ===========*/
