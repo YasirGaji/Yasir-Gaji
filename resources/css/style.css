@@ -195,7 +195,7 @@ img {
     left: 0;
     width: 65%;
     height: 3px;
-    background-color: var(--first-color-lighten);
+    background-color: var(--first-color-dark);
 }
 
 /* CHANGE BACKGROUND HEADER */
