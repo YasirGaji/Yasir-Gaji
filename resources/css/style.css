@@ -607,6 +607,12 @@ img {
     margin: 0 var(--mb-1);
 }
 
+.contacti {
+    color: var(--first-color-light);
+    font-size: 1rem;
+    margin: 0 var(--mb-1);
+}
+
 .contact__box:hover {
     box-shadow: 0 6px 8px rgba(123, 111, 113, .4);
 }
