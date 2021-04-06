@@ -636,6 +636,7 @@ img {
 .contact__button {
     cursor: pointer;
     border: none;
+    margin-left: 30%;
 }
 
 .contact__inputs {
