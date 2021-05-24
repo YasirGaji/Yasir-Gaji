@@ -609,7 +609,7 @@ img {
 
 .contacti {
     color: var(--first-color-light);
-    font-size: 1rem;
+    font-size: 0.8rem;
     margin: 0 var(--mb-1);
 }
 
