@@ -17,14 +17,14 @@ const page = () => {
   return ( 
     <Container>
       <Box borderRadius='lg' bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')} p={3} mb={6} align='center'>
-        Product Manager & Javascript Engineer based in Lagos.
+        Product Manager & Web Engineer based in Lagos.
       </Box>
 
       <Box display={{md: 'flex'}}>
         <Box flexGrow={1}>
           <Heading as='h2' variant="page-title" size='lg' mb={4}>Yasir Gaji
           </Heading>
-          <p>Practising Essentialist | Fashion Enthusiast.</p>
+          <p>I facilitate continuous improvement across all levels of an organization.</p>
         </Box>
 
         <Box flexShrink={0} mt={{base: 4, md: 0}} ml={{md:6}} align="center">
@@ -41,9 +41,9 @@ const page = () => {
           <br/>
           A collaborative Product Manager with expertise building mature agile teams that deliver quality, on-deadline products that drive corporate objectives.
           <br/>
-          A creative Javascript engineer with few years of Frontend Experience leveraging mark-up, Javascript with CMS to build responsive software, and interactive features that drive business growth.
+          A creative Web engineer with few years of Frontend Experience leveraging mark-up, Javascript with CMS to build responsive software, and interactive features that drive business growth.
           <br/>
-          I facilitate continuous improvement across all levels of an organization.
+          
           <br/>
           Check out my recent{' '}
           <NextLink href="/projects"><Link>projects</Link></NextLink>
