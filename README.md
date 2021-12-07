@@ -5,6 +5,13 @@
 My portfolio built on basic mark-up and javascript
 
 ---
+# Stack
+**Html 5 |**
+**Css |**
+**Javascript**
+
+
+---
 # Contibutors
 - Yasir Gaji <yasirgaji@pleasantcodes.com>
 
