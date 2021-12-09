@@ -2,8 +2,7 @@
 
 **Version 1.0.0**
 
-My portfolio built on basic mark-up and javascript
-
+My Portfolio.
 ---
 # Stack
 **Html 5 |**
