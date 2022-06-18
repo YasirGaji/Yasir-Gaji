@@ -370,6 +370,12 @@ img {
     text-align: center;
 }
 
+.about__description {
+    text-align: center;
+    justify-self: center;
+    display: block;
+}
+
 .about__description span {
     font-size: var(--h3-font-size);
     font-weight: var(--font-medium);
