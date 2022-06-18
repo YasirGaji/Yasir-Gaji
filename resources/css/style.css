@@ -371,9 +371,10 @@ img {
 }
 
 .about__description span {
-    font-size: var(--h2-font-size);
+    font-size: var(--h3-font-size);
     font-weight: var(--font-semi-bold);
     color: var(--first-color);
+    text-align: center;
 }
 
 .about__number {
