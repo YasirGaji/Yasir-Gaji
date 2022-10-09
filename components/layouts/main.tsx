@@ -15,7 +15,7 @@ const Main = ({ children }: Props) => {
           <title>Yasir Gaji - Home</title>
         </Head>
 
-        <Container maxW="container.md" px={0} pt={15}>
+        <Container maxW="container.xl" px={0} pt={15}>
           {children}
         </Container>
       </Box>
