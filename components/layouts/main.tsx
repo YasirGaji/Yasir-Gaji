@@ -1,7 +1,13 @@
 import Head from 'next/head';
 import { Box, Container } from '@chakra-ui/react';
+import React, { ReactNode } from 'react';
 
-const Main = ({ children }) => {
+interface Props {
+  children: ReactNode;
+  router?: any;
+}
+
+const Main = ({ children }: Props) => {
   return (
       <Box as="main" pb={0}>
         <Head>
