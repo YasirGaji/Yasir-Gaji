@@ -1,14 +1,25 @@
 {
-  "name": "portfolio",
-  "version": "0.1.0",
+  "name": "Yasir Gaji's Portfolio Website Version2",
+  "version": "2.0.0",
+  "description": "This is my portfolio website",
+  "main": "index.js",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next dev -H 0.0.0.0",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier": "prettier --write ."
   },
+  "keywords": [],
+  "author": "Yasir Gaji<yasirgaji@gmail.com>",
+  "license": "XenturyLens",
   "dependencies": {
+    "@chakra-ui/react": "^2.3.5",
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "framer-motion": "^7.5.3",
     "next": "12.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
@@ -17,8 +28,9 @@
     "@types/node": "18.8.3",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
-    "eslint": "8.25.0",
-    "eslint-config-next": "12.3.1",
+    "eslint": "^8.25.0",
+    "eslint-config-next": "^12.3.1",
+    "prettier": "^2.7.1",
     "typescript": "4.8.4"
   }
 }
