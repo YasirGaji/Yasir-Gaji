@@ -237,8 +237,7 @@ body {
 
     .about__container,
     .qualification__container,
-    .portfolio__container,
-    .article__container {
+    .portfolio__container {
         grid-template-columns: repeat(2, 1fr);
     }
 

@@ -99,7 +99,6 @@ body {
 
     .home__container {
         height: 100vh;
-        grid-template-rows: -webkit-max-content .5fr;
         grid-template-rows: max-content .5fr;
         align-content: flex-end;
     }
@@ -141,8 +140,7 @@ body {
     }
 
     .services__container,
-    .portfolio__container,
-    .article__container {
+    .portfolio__container {
         grid-template-columns: repeat(3, 1fr);
     }
 
@@ -181,8 +179,7 @@ body {
     }
 
     .qualification__container {
-        -moz-column-gap: 6rem;
-             column-gap: 6rem;
+        column-gap: 6rem;
     }
     
 }
@@ -237,8 +234,7 @@ body {
 
     .about__container,
     .qualification__container,
-    .portfolio__container,
-    .article__container {
+    .portfolio__container {
         grid-template-columns: repeat(2, 1fr);
     }
 
