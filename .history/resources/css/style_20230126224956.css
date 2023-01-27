@@ -253,7 +253,6 @@ img {
  .home__container {
     position: relative;
     height: calc(100vh - var(--header-height));
-    grid-template-rows: repeat(2, -webkit-max-content);
     grid-template-rows: repeat(2, max-content);
     align-content: space-around;
     row-gap: 2rem;
@@ -311,8 +310,6 @@ img {
 }
 
 .home__social-icon {
-    width: -webkit-max-content;
-    width: -moz-max-content;
     width: max-content;
     font-size: 1.5rem;
     margin-bottom: var(--mb-1);
@@ -547,59 +544,6 @@ img {
     font-weight: var(--font-semi-bold);
 }
 
-/*  PORTFOLIO SECTION  ===========*/
-.article__nav {
-    text-align: center;
-    margin-bottom: var(--mb-3);
-}
-
-.article__item {
-    margin: 0 var(--mb-2);
-    cursor: pointer;
-}
-
-.article__content {
-    background-color: #fff;
-    border-radius: .5rem;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(174, 190, 205, .3);
-}
-
-.article__img {
-    width: 100%;
-    transition: .4s;
-}
-
-.article__data {
-    padding: 1.5rem;
-}
-
-.article__subtitle {
-    font-size: var(--small-font-size);
-    color: var(--first-color-light);
-}
-
-.article__title {
-    font-size: var(--h3-font-size);
-    color: var(--first-color);
-    margin: var(--mb-2) 0;
-}
-
-.article__content:hover {
-    box-shadow: 0 6px 8px rgba(123, 111, 113, .4);
-}
-
-.article__content:hover .article__img {
-    transform: scale(1.02)
-}
-
-/*  ACTIVE MENU PORTFOLIOS  ===========*/
-
-.active-article {
-    color: var(--first-color-dark);
-    font-weight: var(--font-semi-bold);
-}
-
 /*  TESTIMONIAL  ===========*/
 .testimonial__content {
     display: grid;
@@ -704,32 +648,7 @@ img {
 .contact__inputs {
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    -moz-column-gap: 1rem;
-         column-gap: 1rem;
-}
-
-.contact::-webkit-input-placeholder {
-    color: var(--first-color-light);
-    font-family: var(--body-font);
-    font-weight: var(--font-semi-bold);
-}
-
-.contact::-moz-placeholder {
-    color: var(--first-color-light);
-    font-family: var(--body-font);
-    font-weight: var(--font-semi-bold);
-}
-
-.contact:-ms-input-placeholder {
-    color: var(--first-color-light);
-    font-family: var(--body-font);
-    font-weight: var(--font-semi-bold);
-}
-
-.contact::-ms-input-placeholder {
-    color: var(--first-color-light);
-    font-family: var(--body-font);
-    font-weight: var(--font-semi-bold);
+    column-gap: 1rem;
 }
 
 .contact::placeholder {
@@ -750,32 +669,13 @@ img {
 #status.success {
     background-color: green;
     color: var(--first-color);
-    -webkit-animation: status 4s ease forwards;
-            animation: status 4s ease forwards;
+    animation: status 4s ease forwards;
 }
 
 #status.error {
     background-color: red;
     color: var(--first-color);
-    -webkit-animation: status 4s ease forwards;
-            animation: status 4s ease forwards;
-}
-
-@-webkit-keyframes status {
-    0% {
-        opacity: 1;
-        pointer-events: all;
-    }
-
-    90% {
-        opacity: 1;
-        pointer-events: all;
-    }
-    
-    100% {
-        opacity: 0;
-        pointer-events: none;
-    }
+    animation: status 4s ease forwards;
 }
 
 @keyframes status {

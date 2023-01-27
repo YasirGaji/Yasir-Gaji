@@ -75,10 +75,10 @@ const mixer = mixitup('.portfolio__container', {
     }
 });
 
-// MIXTUP FILTER FOR ARTICLE
-const mixer2 = mixitup('.article__container', {
+// MIXTUP FILTER FOR ARTICLES 
+const mixer2 = mixitup('.articles__container', {
     selectors: {
-        target: '.article__content'
+        target: '.articles__content'
     },
     animation: {
         duration: 400
@@ -98,8 +98,8 @@ function activePortfolio() {
 linkPortfolio.forEach(i => i.addEventListener('click', activePortfolio))
 
 
-//LINK ACTIVE ARTICLE
-const linkArticle = document.querySelectorAll('.article__item')
+//LINK ACTIVE PORTFOLIO
+const linkArticles = document.querySelectorAll('.article__item')
 
 function activeArticle() {
     if(linkArticle){
@@ -108,7 +108,7 @@ function activeArticle() {
     }
 }
 
-linkArticle.forEach(i => i.addEventListener('click', activeArticle))
+linkPortfolio.forEach(i => i.addEventListener('click', activePortfolio))
 
 
 //SWIPER CAROUSEL
