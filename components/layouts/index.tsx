@@ -7,7 +7,7 @@ interface Props {
   router?: any;
 }
 
-const Main = ({ children }: Props) => {
+export const MainLayout = ({ children }: Props) => {
   return (
       <Box as="main" pb={0}>
         <Head>
@@ -22,4 +22,3 @@ const Main = ({ children }: Props) => {
   );
 }
 
-export default Main;

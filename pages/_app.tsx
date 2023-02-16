@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import { ChakraProvider } from '@chakra-ui/react'
-import Layout from '../components/layouts/main'
+import Layout from '../components'
 import { AppProps } from 'next/app'
 
 const Website = ({Component, pageProps, router} : AppProps) => {
