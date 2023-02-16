@@ -76,7 +76,7 @@ export const Navbar = ( props: Props ) => {
           display={{ base: "none", md: "flex" }}
           width={{ base: "full", md: "auto" }}
           alignItems="center" flexGrow={1}
-          mt={{ base: 3, md: 0 }} ml={30}
+          mt={{ base: 3, md: 0 }} ml={100}
         >
           <LinkItem href="/projects" path={path}>Projects</LinkItem>
           <LinkItem href="/articles" path={path}>Articles</LinkItem>
@@ -106,6 +106,7 @@ export const Navbar = ( props: Props ) => {
                   <NextLink href="/articles">
                     <MenuItem as={Link} >Articles</MenuItem>
                   </NextLink>
+                  <MenuItem as={Link} href="https://www.yasirgaji.com">View Source</MenuItem>
                 </MenuList>
             </Menu>
           </Box>
