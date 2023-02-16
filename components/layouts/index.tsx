@@ -1,6 +1,9 @@
+/* eslint-disable react/no-children-prop */
 import Head from 'next/head';
 import { Box, Container } from '@chakra-ui/react';
 import React, { ReactNode } from 'react';
+import { Navbar } from '../navbar';
+// import router from 'next/router';
 
 interface Props {
   children: ReactNode;
@@ -15,7 +18,9 @@ export const MainLayout = ({ children }: Props) => {
           <title>Yasir Gaji - Home</title>
         </Head>
 
-        <Container maxW="container.xl" px={0} pt={15}>
+        <Navbar path="/" href={''} props={undefined} children={undefined} />
+
+        <Container maxW="container.xl" px={0} pt={85}>
           {children}
         </Container>
       </Box>

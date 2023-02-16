@@ -6,7 +6,7 @@ import { LogoBox } from './styles/logo';
 
 
 export const Logo = () => {
-  const logoImg = `/images/Logo${useColorModeValue('', '-dark')}.svg}`
+  const logoImg = `/images/Logo.svg`
 
   return (
     <Link href="/">
@@ -24,7 +24,7 @@ export const Logo = () => {
             fontFamily="M PLUS Rounded 1c"
             fontWeight="bold" ml={3}
           >
-            Yasir Gaji
+            Gàjí fún rẹ́ ẹ
           </Text>
         </LogoBox>
       </a>
