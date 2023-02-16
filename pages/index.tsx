@@ -12,7 +12,7 @@ const Home: NextPage = () => {
         mb={6} p={3} 
         textAlign="center"
       >
-        Hi, I&apos;m Yasir a geek based in Lagos/London
+        Hi, I&apos;m a geek based in Lagos / London
       </Box>
 
       <Box display={{md: 'flex'}}>
@@ -20,7 +20,7 @@ const Home: NextPage = () => {
           <Heading as='h2' variant="page-title">
             Yasir Gaji
           </Heading>
-          <p>Product Geek ( Software Engineer / Product Manager / Writer )</p>
+          <p>Software Engineer & Product Manager</p>
         </Box>
       </Box>
     </Container>
