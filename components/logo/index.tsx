@@ -10,7 +10,6 @@ export const Logo = () => {
 
   return (
     <Link href="/">
-      <a>
         <LogoBox>
           <Image 
             src={logoImg}
@@ -27,7 +26,6 @@ export const Logo = () => {
             Gàjí fún rẹ́ ẹ
           </Text>
         </LogoBox>
-      </a>
     </Link>
   );
 };

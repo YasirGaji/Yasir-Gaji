@@ -76,7 +76,7 @@ export const Navbar = ( props: Props ) => {
           display={{ base: "none", md: "flex" }}
           width={{ base: "full", md: "auto" }}
           alignItems="center" flexGrow={1}
-          mt={{ base: 4, md: 0 }} ml={7}
+          mt={{ base: 3, md: 0 }} ml={30}
         >
           <LinkItem href="/projects" path={path}>Projects</LinkItem>
           <LinkItem href="/articles" path={path}>Articles</LinkItem>
@@ -95,12 +95,16 @@ export const Navbar = ( props: Props ) => {
                 aria-label="Options"
               />
                 <MenuList>
+                  <NextLink href="/">
+                    <MenuItem as={Link} >About</MenuItem>
+                  </NextLink>
+
                   <NextLink href="/projects">
-                    <MenuItem>Projects</MenuItem>
+                    <MenuItem as={Link} >Projects</MenuItem>
                   </NextLink>
 
                   <NextLink href="/articles">
-                    <MenuItem>Articles</MenuItem>
+                    <MenuItem as={Link} >Articles</MenuItem>
                   </NextLink>
                 </MenuList>
             </Menu>
