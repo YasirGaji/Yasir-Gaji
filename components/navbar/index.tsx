@@ -20,8 +20,8 @@ import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 interface Props {
   path: string;
   href: string;
-  children: ReactNode;
-  props: any;
+  children?: ReactNode;
+  props?: any;
 }
 
 export const LinkItem = ({ href, path, children }: Props) => {
@@ -58,9 +58,8 @@ export const Navbar = ( props: Props ) => {
       <Container
         display="flex"  p={2}
         maxW="container.md"
-        wrap="wrap"
-        align="center"
-        justify="space-between"
+        alignItems="center"
+        justifyContent="space-between"
         flexWrap="wrap"
       >
         <Flex align="center" mr={5}>
@@ -71,6 +70,21 @@ export const Navbar = ( props: Props ) => {
             <Logo />
           </Heading>
         </Flex>
+
+        <Stack
+          direction={{ base: "column", md: "row" }}
+          display={{ base: "none", md: "flex" }}
+          width={{ base: "full", md: "auto" }}
+          alignItems="center" flexGrow={1}
+          mt={{ base: 4, md: 0 }}
+        >
+          <LinkItem href="/projects" path={path}>Projects</LinkItem>
+          <LinkItem href="/articles" path={path}>Articles</LinkItem>
+        </Stack>
+
+        <Box flex={1} alignItems="right">
+
+        </Box>
       </Container>
     </Box>
   )

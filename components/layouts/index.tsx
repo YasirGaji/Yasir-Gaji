@@ -20,7 +20,7 @@ export const MainLayout = ({ children }: Props) => {
 
         <Navbar path="/" href={''} props={undefined} children={undefined} />
 
-        <Container maxW="container.xl" px={0} pt={85}>
+        <Container maxW="container.xl" px={0} pt={75}>
           {children}
         </Container>
       </Box>
