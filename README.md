@@ -2,7 +2,7 @@
 
 [In Progress]
 
-This is a protfolio website for Yasir Gaji, a software engineer based in Lagos, Nigeria. The website is built with React, Typescript, and TailwindCSS. The backend is built with NestJS and TypeOrm.
+Version 2 of my portfolio website. This time I am using [Next.js](https://nextjs.org/), [Chakra](https://chakra-ui.com/), [Framer Motion](https://www.framer.com/motion/), and [Three.js](https://threejs.org/).
 
 ## Other tools/technology and libraries used
 
