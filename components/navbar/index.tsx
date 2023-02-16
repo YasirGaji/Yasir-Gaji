@@ -15,7 +15,7 @@ import {
   IconButton,
   useColorModeValue
 } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import {HamburgerIcon} from "@chakra-ui/icons";
 
 interface Props {
   path: string;
@@ -62,10 +62,10 @@ export const Navbar = ( props: Props ) => {
         justifyContent="space-between"
         flexWrap="wrap"
       >
-        <Flex align="center" mr={5}>
+        <Flex align="center" mr={5} pr={80}>
           <Heading 
             as="h1" size="lg"
-            letterSpacing={'tight'}
+            letterSpacing={'tighter'}
           >
             <Logo />
           </Heading>
@@ -76,14 +76,35 @@ export const Navbar = ( props: Props ) => {
           display={{ base: "none", md: "flex" }}
           width={{ base: "full", md: "auto" }}
           alignItems="center" flexGrow={1}
-          mt={{ base: 4, md: 0 }}
+          mt={{ base: 4, md: 0 }} ml={7}
         >
           <LinkItem href="/projects" path={path}>Projects</LinkItem>
           <LinkItem href="/articles" path={path}>Articles</LinkItem>
         </Stack>
 
         <Box flex={1} alignItems="right">
+          <Box 
+            display={{ base: "block", md: "none" }}
+            ml={2}
+          >
+            <Menu>
+              <MenuButton 
+                as={IconButton}
+                icon={<HamburgerIcon />}
+                variant="outline"
+                aria-label="Options"
+              />
+                <MenuList>
+                  <NextLink href="/projects">
+                    <MenuItem>Projects</MenuItem>
+                  </NextLink>
 
+                  <NextLink href="/articles">
+                    <MenuItem>Articles</MenuItem>
+                  </NextLink>
+                </MenuList>
+            </Menu>
+          </Box>
         </Box>
       </Container>
     </Box>
