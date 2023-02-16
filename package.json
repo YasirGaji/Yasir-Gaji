@@ -16,6 +16,7 @@
   "author": "Yasir Gaji<yasirgaji@gmail.com>",
   "license": "XenturyLens",
   "dependencies": {
+    "@chakra-ui/icons": "^2.0.17",
     "@chakra-ui/react": "^2.3.5",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",

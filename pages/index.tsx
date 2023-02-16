@@ -20,7 +20,7 @@ const Home: NextPage = () => {
           <Heading as='h2' variant="page-title">
             Yasir Gaji
           </Heading>
-          <p>Software Engineer & Product Manager</p>
+          <p>iBuild ( Software Engineer / Product Manager / Writer )</p>
         </Box>
       </Box>
     </Container>
