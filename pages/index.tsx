@@ -1,5 +1,12 @@
 /* eslint-disable jsx-a11y/alt-text */
-import { Container, Box, Heading, Image, Center } from '@chakra-ui/react'
+import { 
+  Container, 
+  Box, 
+  Heading, 
+  Image, 
+  Center,
+  useColorModeValue,
+} from '@chakra-ui/react'
 import type { NextPage } from 'next'
 
 
@@ -21,7 +28,7 @@ const Home: NextPage = () => {
           <Heading as='h2' variant="page-title">
             Yasir Gaji
           </Heading>
-          <p>Software Engineer / Product Manager / Writer</p>
+          <p>Software Engineer & Product Manager</p>
         </Box>
 
         <Box 
@@ -37,7 +44,7 @@ const Home: NextPage = () => {
             maxWidth="100px"
             display="inline-block"
             borderRadius="full"
-            src="/images/yasir.jpeg"
+            src={useColorModeValue("/images/yasir.jpeg", "/images/yasir-dark.png")}
             alt="Yasir Gaji"
           />
           </Center>
