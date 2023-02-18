@@ -1,4 +1,3 @@
-import { extendTheme } from "@chakra-ui/react";
 import { mode } from "@chakra-ui/theme-tools";
 
 interface Props {
@@ -42,5 +41,11 @@ export const fonts = {
 }
 
 export const  colors = {
-
+  glassTeal: "#88ccca",
 }
+
+export const config = {
+  initialColorMode: "dark",
+  useSystemColorMode: true,
+}
+
