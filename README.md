@@ -22,7 +22,7 @@ Version 2 of my portfolio website. This time I am using [Next.js](https://nextjs
 
   1. `SyntaxError: Named export 'chakra' not found. The requested module '@chakra-ui/system' is a CommonJS module, which may not support all module.exports as named exports.`
   `CommonJS modules can always be imported via the default export, for example using:`
-  `import pkg from '@chakra-ui/system';` - I fixed this by deleting nodemodules and re-installing npm [Stack Overflow](https://github.com/chakra-ui/chakra-ui/issues/7170)
+  `import pkg from '@chakra-ui/system';` - I fixed this by deleting nodemodules and re-installing npm | Solution Reference - [Stack Overflow](https://github.com/chakra-ui/chakra-ui/issues/7170)
 
 ## Current Error
   
