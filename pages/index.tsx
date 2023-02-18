@@ -1,4 +1,5 @@
-import { Container, Box, Heading } from '@chakra-ui/react'
+/* eslint-disable jsx-a11y/alt-text */
+import { Container, Box, Heading, Image } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 
 
@@ -20,7 +21,25 @@ const Home: NextPage = () => {
           <Heading as='h2' variant="page-title">
             Yasir Gaji
           </Heading>
-          <p>iBuild ( Software Engineer / Product Manager / Writer )</p>
+          <p>Software Engineer / Product Manager / Writer</p>
+        </Box>
+
+        <Box 
+          flexShrink={0} 
+          mt={{base: 4, md: 0}}
+          ml={{md: 6}}
+          alignSelf="center"
+        >
+          <Image
+            borderColor="whiteAlpha.800"
+            borderWidth={2}
+            borderStyle="solid"
+            maxWidth="100px"
+            display="inline-block"
+            borderRadius="full"
+            src="/images/yasir.jpeg"
+            alt="Yasir Gaji"
+          />
         </Box>
       </Box>
     </Container>
