@@ -8,6 +8,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 import type { NextPage } from 'next'
+import { Section } from '../components'
 
 
 const Home: NextPage = () => {
@@ -50,6 +51,13 @@ const Home: NextPage = () => {
           </Center>
         </Box>
       </Box>
+
+      <Section delay={0.1}>
+        <Heading as='h4' variant="section-title">
+          Projects
+        </Heading>
+        <p>There we go</p>
+      </Section>
     </Container>
   )
 }

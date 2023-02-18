@@ -8,7 +8,7 @@ Version 2 of my portfolio website. This time I am using [Next.js](https://nextjs
 
   ##`Frontend`
 
-  [Framer Motion](https://www.framer.com/motion/) for animations | 
+  [Framer Motion](https://www.framer.com/motion/) for animations |
 
   ##`Backend`
 
