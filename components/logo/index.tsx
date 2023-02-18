@@ -22,6 +22,7 @@ export const Logo = () => {
             color={useColorModeValue('black', 'white')}
             fontFamily="M PLUS Rounded 1c"
             fontWeight="bold" ml={3}
+            width="110px"
           >
             Gàjí fún rẹ́ ẹ
           </Text>

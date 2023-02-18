@@ -62,7 +62,7 @@ export const Navbar = ( props: Props ) => {
         justifyContent="space-between"
         flexWrap="wrap"
       >
-        <Flex align="center" mr={300} pr={7}>
+        <Flex align="center" mr={110} pr={7}>
           <Heading 
             as="h1" size="lg"
             letterSpacing={'tighter'}
