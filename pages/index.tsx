@@ -8,7 +8,10 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 import type { NextPage } from 'next'
-import { Section } from '../components'
+import { 
+  Section, 
+  Paragraph 
+} from '../components'
 
 
 const Home: NextPage = () => {
@@ -34,8 +37,8 @@ const Home: NextPage = () => {
 
         <Box 
           flexShrink={0} 
-          mt={{base: 4, md: 0}}
-          ml={{md: 6}}
+          mt={{base: 9, md: 0}}
+          ml={{md: 6}} mb={20}
         >
           <Center>
           <Image
@@ -45,7 +48,7 @@ const Home: NextPage = () => {
             maxWidth="100px"
             display="inline-block"
             borderRadius="full"
-            src={useColorModeValue("/images/yasir.jpeg", "/images/yasir-dark.png")}
+            src={useColorModeValue("/images/me2.jpg", "/images/me.jpg")}
             alt="Yasir Gaji"
           />
           </Center>
@@ -53,10 +56,12 @@ const Home: NextPage = () => {
       </Box>
 
       <Section delay={0.1}>
-        <Heading as='h4' variant="section-title">
+        <Heading as='h6' variant="section-title">
           Projects
         </Heading>
-        <p>There we go</p>
+        <Paragraph>
+          There we go
+        </Paragraph>
       </Section>
     </Container>
   )
