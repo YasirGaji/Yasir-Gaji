@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "prettier.config.js", "pages/_app.js", "components/layouts/main.js", "components/navbar/index.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "prettier.config.js", "pages/_app.js", "components/layouts/main.js", "components/navbar/index.tsx", "components/section/index.js"],
   "exclude": ["node_modules"]
 }

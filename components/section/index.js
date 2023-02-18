@@ -1,13 +1,13 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { StyledDiv } from './styles/section';
 
 
-interface SectionProps {
-  children: ReactNode;
-  delay?: number;
-}
+// interface SectionProps {
+//   children: ReactNode;
+//   delay?: number;
+// }
 
-export const Section = ({ children, delay=0 }:SectionProps) => {
+export const Section = ({ children, delay=0 }) => {
   return (
     <StyledDiv
       initial={{ opacity: 0, y: 10 }}

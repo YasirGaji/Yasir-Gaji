@@ -11,9 +11,9 @@ import {
 } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import { 
-  Section, 
-  Paragraph 
+  Section,  
 } from '../components'
+import Paragraph from '../components/paragraph'
 
 
 const Home: NextPage = () => {

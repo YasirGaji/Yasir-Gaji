@@ -6,6 +6,5 @@ import { chakra, shouldForwardProp } from '@chakra-ui/react';
 // }
 
 export const StyledDiv = chakra(motion.div, {
-  shouldForwardProp: (prop) => shouldForwardProp(prop) || prop === 'transition'
+  shouldForwardProp: (prop) => shouldForwardProp(prop) || prop === 'transition',
 });
-
