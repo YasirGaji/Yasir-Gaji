@@ -49,3 +49,8 @@ export const config = {
   useSystemColorMode: true,
 }
 
+export const Link = {
+  baseStyle: (props: Props) => ({
+    color: mode("#3d7aed", "#ff63c3")(props),
+  })
+}

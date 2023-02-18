@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
+import NextLink from 'next/link'
 import { 
   Container, 
   Box, 
@@ -13,7 +14,6 @@ import {
   Section, 
   Paragraph 
 } from '../components'
-import NextLink from 'next/link'
 
 
 const Home: NextPage = () => {
@@ -59,13 +59,17 @@ const Home: NextPage = () => {
 
       <Section delay={0.1}>
         <Heading as='h6' variant="section-title">
-          Projects
+          Bio
         </Heading>
         <Paragraph>
           I love to build and facilitate continuous improvement across all levels of products that solve problems and make people&apos;s lives easier. I&apos;m also a big fan of open source and I&apos;m always looking for ways to contribute to the community. I&apos;m currently working on a few projects and I&apos;m always open to new opportunities. If you&apos;d like to get in touch.{' '}
 
-          <NextLink href="/projects" passHref>
-            <Link>Check out my projects</Link>
+          <NextLink href="/projects" >
+            <Link 
+              color={useColorModeValue('blue.500', 'blue.300')}
+            >
+              Check out my projects
+            </Link>
           </NextLink>
         </Paragraph>
       </Section>

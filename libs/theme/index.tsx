@@ -5,6 +5,7 @@ import {
   componenets,
   fonts,
   colors,
+  Link
 } from "./styles/theme";
 
 
@@ -14,4 +15,5 @@ export const Theme = extendTheme({
   componenets,
   fonts,
   colors,
+  Link
 });
