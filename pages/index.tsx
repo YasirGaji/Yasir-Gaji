@@ -8,12 +8,14 @@ import {
   Center,
   useColorModeValue,
   Link,
+  Button,
 } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import { 
   Section,  
 } from '../components'
 import Paragraph from '../components/paragraph'
+import { ChevronRightIcon } from '@chakra-ui/icons'
 
 
 const Home: NextPage = () => {
@@ -70,8 +72,21 @@ const Home: NextPage = () => {
             >
               Check out my projects
             </Link>
-          </NextLink>
+          </NextLink>.
         </Paragraph>
+
+        <Box my={4}>
+          <Center>
+            <NextLink href="/projects" >
+              <Button 
+                rightIcon={<ChevronRightIcon />} 
+                bg="#2F0B0D" color={useColorModeValue('gray.100', 'white')}
+              >
+                Projects
+              </Button>
+            </NextLink>
+          </Center>
+        </Box>
       </Section>
     </Container>
   )
