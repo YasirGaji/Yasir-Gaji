@@ -6,12 +6,14 @@ import {
   Image, 
   Center,
   useColorModeValue,
+  Link,
 } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import { 
   Section, 
   Paragraph 
 } from '../components'
+import NextLink from 'next/link'
 
 
 const Home: NextPage = () => {
@@ -61,6 +63,10 @@ const Home: NextPage = () => {
         </Heading>
         <Paragraph>
           I love to build and facilitate continuous improvement across all levels of products that solve problems and make people&apos;s lives easier. I&apos;m also a big fan of open source and I&apos;m always looking for ways to contribute to the community. I&apos;m currently working on a few projects and I&apos;m always open to new opportunities. If you&apos;d like to get in touch.{' '}
+
+          <NextLink href="/projects" passHref>
+            <Link>Check out my projects</Link>
+          </NextLink>
         </Paragraph>
       </Section>
     </Container>
