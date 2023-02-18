@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import { Container, Box, Heading, Image } from '@chakra-ui/react'
+import { Container, Box, Heading, Image, Center } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 
 
@@ -28,8 +28,8 @@ const Home: NextPage = () => {
           flexShrink={0} 
           mt={{base: 4, md: 0}}
           ml={{md: 6}}
-          alignSelf="center"
         >
+          <Center>
           <Image
             borderColor="whiteAlpha.800"
             borderWidth={2}
@@ -40,6 +40,7 @@ const Home: NextPage = () => {
             src="/images/yasir.jpeg"
             alt="Yasir Gaji"
           />
+          </Center>
         </Box>
       </Box>
     </Container>
