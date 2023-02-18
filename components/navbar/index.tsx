@@ -16,6 +16,7 @@ import {
   useColorModeValue
 } from "@chakra-ui/react";
 import {HamburgerIcon} from "@chakra-ui/icons";
+import { ThemeToggleButton } from "../theme-toggle-button";
 
 interface Props {
   path: string;
@@ -62,7 +63,7 @@ export const Navbar = ( props: Props ) => {
         justifyContent="space-between"
         flexWrap="wrap"
       >
-        <Flex align="center" mr={110} pr={7}>
+        <Flex align="center" mr={20} pr={7}>
           <Heading 
             as="h1" size="lg"
             letterSpacing={'tighter'}
@@ -71,18 +72,21 @@ export const Navbar = ( props: Props ) => {
           </Heading>
         </Flex>
 
+        <ThemeToggleButton />
+
         <Stack
           direction={{ base: "column", md: "row" }}
           display={{ base: "none", md: "flex" }}
           width={{ base: "full", md: "auto" }}
           alignItems="center" flexGrow={1}
-          mt={{ base: 3, md: 0 }} ml={100}
+          mt={{ base: 3, md: 0 }} ml={2}
         >
           <LinkItem href="/projects" path={path}>Projects</LinkItem>
           <LinkItem href="/articles" path={path}>Articles</LinkItem>
         </Stack>
 
         <Box flex={1} alignItems="right">
+          
           <Box 
             display={{ base: "block", md: "none" }}
             ml={2}
