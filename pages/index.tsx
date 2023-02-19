@@ -106,6 +106,21 @@ const Home: NextPage = () => {
           Software Engineering 
         </BioSection>
       </Section>
+
+      <Section delay={0.2}>
+        <Heading as='h6' variant="section-title">
+          I {useColorModeValue("🖤", "🤍")}
+        </Heading>
+
+        <BioSection>
+          <BioYear>Tech</BioYear>
+          
+        </BioSection>
+        <BioSection>
+          <BioYear>Entertainment</BioYear>
+           
+        </BioSection>
+      </Section>
     </Container>
   )
 }
