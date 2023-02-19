@@ -16,6 +16,9 @@ import {
 } from '../components'
 import Paragraph from '../components/paragraph'
 import { ChevronRightIcon } from '@chakra-ui/icons'
+import { BioSection, BioYear } from '../components'
+
+
 
 
 const Home: NextPage = () => {
@@ -85,8 +88,23 @@ const Home: NextPage = () => {
                 Projects
               </Button>
             </NextLink>
-          </Center>
+          </Center> 
         </Box>
+      </Section>
+
+      <Section delay={0.2}>
+        <Heading as='h6' variant="section-title">
+          Experience
+        </Heading>
+
+        <BioSection>
+          <BioYear>2019 - Present</BioYear>
+          Physics
+        </BioSection>
+        <BioSection>
+          <BioYear>2022</BioYear>
+          Software Engineering 
+        </BioSection>
       </Section>
     </Container>
   )
