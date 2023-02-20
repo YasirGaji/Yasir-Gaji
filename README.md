@@ -24,6 +24,10 @@ Version 2 of my portfolio website. This time I am using [Next.js](https://nextjs
   `CommonJS modules can always be imported via the default export, for example using:`
   `import pkg from '@chakra-ui/system';` - I fixed this by deleting nodemodules and re-installing npm | Solution Reference - [Stack Overflow](https://github.com/chakra-ui/chakra-ui/issues/7170)
 
+  2. `'WorkGridItem' cannot be used as a JSX component. Its return type 'void' is not a valid JSX element.` - I fixed this by adding `return` before the `WorkGridItem` component. | Solution Reference - [Stack Overflow](https://stackoverflow.com/questions/65832262/react-cannot-be-used-as-a-jsx-component-its-return-type-void-is-not-a-valid)
+
+  3. `Type 'StaticImageData' is not assignable to type 'string'.` - I fixed this by adding `as string` after the image import. | Solution Reference - [Stack Overflow](https://stackoverflow.com/questions/65832262/react-cannot-be-used-as-a-jsx-component-its-return-type-void-is-not-a-valid)
+
 ## Current Error
   
   1. Non Yet

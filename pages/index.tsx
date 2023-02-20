@@ -63,7 +63,7 @@ const Home: NextPage = () => {
       </Box>
 
       <Section delay={0.1}>
-        <Heading as='h6' variant="section-title">
+        <Heading as="h6" variant="section-title">
           Bio
         </Heading>
         <Paragraph>
@@ -108,7 +108,7 @@ const Home: NextPage = () => {
       </Section>
 
       <Section delay={0.2}>
-        <Heading as='h6' variant="section-title">
+        <Heading as="h6" variant="section-title">
           I {useColorModeValue("🖤", "🤍")}
         </Heading>
 
