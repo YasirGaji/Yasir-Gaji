@@ -2,7 +2,10 @@
 import Head from 'next/head';
 import { Box, Container } from '@chakra-ui/react';
 import React, { ReactNode } from 'react';
-import { Navbar } from '../navbar';
+import { Navbar } from '../navbar'
+import { Model } from '../model'
+import { NoSsr } from '../no-ssr'
+
 // import router from 'next/router';
 
 interface Props {
@@ -21,6 +24,10 @@ export const MainLayout = ({ children }: Props) => {
         <Navbar path="/" href={''} props={undefined} children={undefined} />
 
         <Container maxW="container.xl" px={0} pt={75}>
+          <NoSsr>
+            <Model />
+          </NoSsr>
+
           {children}
         </Container>
       </Box>
