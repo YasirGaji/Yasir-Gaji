@@ -17,6 +17,8 @@ Version 2 of my portfolio website. This time I am using [Next.js](https://nextjs
 ## What I Learned
 
   1. How to use Next.js
+  2. How to use Chakra
+  3. How to use Framer Motion
   
 ## Errors I Faced
 

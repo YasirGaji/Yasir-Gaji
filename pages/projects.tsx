@@ -5,12 +5,14 @@ import {
 } from '@chakra-ui/react'
 import {Section} from '../components'
 import { WorkGridItem } from '../components'
+import { Layout } from '../components/articles';
 
 import thumbWearhighstreet from '../public/images/wearhighstreet.png';
 import thumbXenturyLens from '../public/images/xenturylens.png';
 
 const Projects = () => {
   return (
+    <Layout>
     <Container minWidth="100%">
       <Heading as="h3" fontSize={20} mb={4}>
         Projects
@@ -38,6 +40,7 @@ const Projects = () => {
         </Section>
       </SimpleGrid>
     </Container>
+    </Layout>
   )
 }
 
