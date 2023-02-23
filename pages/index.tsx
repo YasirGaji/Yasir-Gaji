@@ -23,7 +23,7 @@ import { BioSection, BioYear } from '../components'
 
 const Home: NextPage = () => {
   return (
-    <Container >
+    <Container minWidth="70%">
       <Box 
         borderRadius="lg" 
         color="white" 
