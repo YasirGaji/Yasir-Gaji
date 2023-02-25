@@ -21,6 +21,15 @@ export const Model = () => {
       w={[280, 480, 640]} h={[280, 480, 640]}
       position="relative"
     >
+      {loading && (
+        <Spinner 
+          size="xl" position="absolute" 
+          top="50%" left="50%" 
+          transform="translate(-50%, -50%)" 
+          ml="calc(0px - var(--spinner-size) / 2)"
+          mt="calc(0px - var(--spinner-size) / 2)"
+        />
+      )}
       Room.
     </Box>
   )
