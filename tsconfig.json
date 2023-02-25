@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "prettier.config.js", "pages/_app.js", "components/layouts/main.js", "components/navbar/index.tsx", "components/section/index.js", "components/grid-item/styles/gridItem.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "prettier.config.js", "pages/_app.js", "components/layouts/main.js", "components/navbar/index.tsx", "components/section/index.js", "components/grid-item/styles/gridItem.js", "components/model/index.js"],
   "exclude": ["node_modules"]
 }

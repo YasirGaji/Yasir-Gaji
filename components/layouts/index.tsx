@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { Box, Container } from '@chakra-ui/react';
 import React, { ReactNode } from 'react';
 import { Navbar } from '../navbar'
-import { Model } from '../model'
+import { Model } from '../model/index.js'
 import { NoSsr } from '../no-ssr'
 
 // import router from 'next/router';
@@ -25,7 +25,7 @@ export const MainLayout = ({ children }: Props) => {
 
         <Container maxW="container.xl" px={0} pt={75}>
           <NoSsr>
-            <Model />
+            {/* <Model /> */}
           </NoSsr>
 
           {children}
