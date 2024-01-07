@@ -284,7 +284,7 @@ img {
 }
 
 .home__profession {
-    font-size: 17px !important;
+    font-size: .90rem;
     margin-bottom: var(--mb-3);
 } 
 
