@@ -16,13 +16,19 @@
     "test:e2e:ui": "playwright test --ui"
   },
   "dependencies": {
+    "@sanity/image-url": "2",
+    "@sanity/vision": "5",
     "next": "16.2.6",
+    "next-sanity": "12",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "sanity": "5",
+    "styled-components": "6"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.15",
     "@playwright/test": "^1.60.0",
+    "@sanity/codegen": "^6.1.0",
     "@tailwindcss/postcss": "^4",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
@@ -30,7 +36,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@vitejs/plugin-react": "^6.0.1",
+    "@vitejs/plugin-react": "^5.2.0",
     "@vitest/ui": "^4.1.6",
     "jsdom": "^29.1.1",
     "tailwindcss": "^4",
