@@ -1,26 +1,55 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Editorial — light */
+  --color-bg-editorial-light: #FAF8F5;
+  --color-ink-editorial-light: #1A1A1A;
+  --color-muted-editorial-light: #6B6B6B;
+  --color-line-editorial-light: #E6E1D8;
+
+  /* Editorial — dark */
+  --color-bg-editorial-dark: #0E0E0E;
+  --color-ink-editorial-dark: #F0EDE7;
+  --color-muted-editorial-dark: #8A8780;
+  --color-line-editorial-dark: #1F1E1B;
+
+  /* Editorial accent */
+  --color-accent-editorial: #C9A24A;
+
+  /* IDE — Dark 2026 derived */
+  --color-bg-ide-editor: #1F1F1F;
+  --color-bg-ide-sidebar: #181818;
+  --color-bg-ide-activity: #141414;
+  --color-bg-ide-statusbar: #005FB8;
+  --color-fg-ide-default: #CCCCCC;
+  --color-fg-ide-keyword: #C586C0;
+  --color-fg-ide-string: #CE9178;
+  --color-fg-ide-function: #DCDCAA;
+  --color-fg-ide-type: #4EC9B0;
+  --color-fg-ide-comment: #6A9955;
+
+  /* Fonts */
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    color-scheme: light dark;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    background: var(--color-bg-editorial-light);
+    color: var(--color-ink-editorial-light);
+    font-family: var(--font-body);
+  }
+  html[data-mode="ide"] body {
+    background: var(--color-bg-ide-editor);
+    color: var(--color-fg-ide-default);
+    font-family: var(--font-mono);
+  }
+  html[data-theme="dark"][data-mode="editorial"] body {
+    background: var(--color-bg-editorial-dark);
+    color: var(--color-ink-editorial-dark);
+  }
 }
