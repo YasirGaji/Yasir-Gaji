@@ -1,31 +1,14 @@
-<!-- © Yasir Gaji, PLEASANT CODES INC. -->
+# yasirgaji.com
 
-# yasirgaji.com (version 1)
+Personal portfolio of Yasir Gaji — Senior Software Engineer, Applied AI & Backend Architecture.
 
-[In Progress]
+Built with Next.js 16, Sanity, Tailwind v4. Deployed on Vercel.
 
-This is my protfolio website, a software engineer based in Lagos, Nigeria. The website is built with [Html](https://html.com/), [CSS3](https://developer.mozilla.org/en-US/docs/Learn/CSS), and [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript). The website is hosted on [Netlify](https://www.netlify.com/).
+See `docs/superpowers/specs/2026-05-13-portfolio-v2-design.md` for the design.
 
-## Other tools/technology and libraries used
+## Develop
 
-  ##`Frontend`
-
-  None Yet
-
-  ##`Backend`
-
-  None Yet
-
-## What I Learned
-
-  1. None Yet
-  
-## Errors I Faced
-
-  1. None Yet
-
-## Current Error
-  
-  1. Non Yet
-
-## [View Project](https://yasirgaji.com/)
+```sh
+pnpm install
+pnpm dev
+```
