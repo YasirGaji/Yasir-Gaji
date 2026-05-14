@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@sanity/client':
+        specifier: ^7.22.0
+        version: 7.22.0
       '@sanity/image-url':
         specifier: '2'
         version: 2.1.1

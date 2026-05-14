@@ -13,9 +13,12 @@
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
     "test:e2e": "playwright test",
-    "test:e2e:ui": "playwright test --ui"
+    "test:e2e:ui": "playwright test --ui",
+    "typegen:extract": "sanity schema extract --enforce-required-fields --path ./sanity/extract.json",
+    "typegen": "pnpm typegen:extract && sanity typegen generate"
   },
   "dependencies": {
+    "@sanity/client": "^7.22.0",
     "@sanity/image-url": "2",
     "@sanity/vision": "5",
     "next": "16.2.6",

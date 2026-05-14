@@ -45,6 +45,7 @@ next-env.d.ts
 
 # Sanity Studio
 /sanity/dist
+/sanity/extract.json
 
 # IDE
 .idea
