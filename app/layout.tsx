@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteNav } from "@/components/site-nav";
 import { getThemeFromCookie } from "@/lib/theme-cookie";
 import "./globals.css";
 
@@ -43,7 +45,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       {...(theme ? { "data-theme": theme } : {})}
       className={className}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <SiteNav />
+        <main className="flex-1">{children}</main>
+        <SiteFooter />
+      </body>
     </html>
   );
 }

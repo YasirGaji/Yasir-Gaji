@@ -2,6 +2,7 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+@custom-variant dark-editorial (&:where(html[data-mode="editorial"][data-theme="dark"] *));
 @custom-variant dark (&:is(.dark *));
 
 @theme {
