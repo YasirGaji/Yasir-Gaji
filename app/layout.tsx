@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { Fraunces, Geist, Inter, JetBrains_Mono } from "next/font/google";
+import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
+import { getThemeFromCookie } from "@/lib/theme-cookie";
 import "./globals.css";
-import { cn } from "@/lib/utils";
-
-const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -33,20 +31,17 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://yasirgaji.com"),
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const theme = await getThemeFromCookie();
+  const fontVars = `${fraunces.variable} ${inter.variable} ${jetbrainsMono.variable}`;
+  const className = `${fontVars} h-full antialiased${theme === "dark" ? " dark" : ""}`;
+
   return (
     <html
       lang="en"
       data-mode="editorial"
-      className={cn(
-        "h-full",
-        "antialiased",
-        fraunces.variable,
-        inter.variable,
-        jetbrainsMono.variable,
-        "font-sans",
-        geist.variable,
-      )}
+      {...(theme ? { "data-theme": theme } : {})}
+      className={className}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
