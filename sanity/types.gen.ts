@@ -594,10 +594,514 @@ export type SiteSettingsQueryResult = {
   calcomUrl: string | null;
 } | null;
 
+// Source: sanity/lib/queries.ts
+// Variable: heroQuoteQuery
+// Query: *[_type == "recommendation" && isHeroQuote == true][0] {    _id,    name,    role,    company,    quote,    linkedinUrl,    headshot { asset->{_id, url} }  }
+export type HeroQuoteQueryResult = {
+  _id: string;
+  name: string;
+  role: string | null;
+  company: string | null;
+  quote: string;
+  linkedinUrl: string | null;
+  headshot: {
+    asset: {
+      _id: string;
+      url: string;
+    } | null;
+  } | null;
+} | null;
+
+// Source: sanity/lib/queries.ts
+// Variable: homeFeaturedQuery
+// Query: *[_type == "caseStudy" && isFeatured == true] | order(order asc)[0...3] {    _id,    title,    slug,    role,    sector,    company,    heroImage { asset->{_id, url} },    stack  }
+export type HomeFeaturedQueryResult = Array<{
+  _id: string;
+  title: string;
+  slug: Slug;
+  role: string | null;
+  sector: "applied-ai" | "backend" | "founder" | "frontend" | "mobile" | null;
+  company: string | null;
+  heroImage: {
+    asset: {
+      _id: string;
+      url: string;
+    } | null;
+  } | null;
+  stack: Array<string> | null;
+}>;
+
+// Source: sanity/lib/queries.ts
+// Variable: homeLatestArticlesQuery
+// Query: *[_type == "article"] | order(publishedAt desc)[0...3] {    _id,    title,    slug,    excerpt,    publishedAt,    coverImage { asset->{_id, url} },    series->{title, slug}  }
+export type HomeLatestArticlesQueryResult = Array<{
+  _id: string;
+  title: string;
+  slug: Slug;
+  excerpt: string | null;
+  publishedAt: string;
+  coverImage: {
+    asset: {
+      _id: string;
+      url: string;
+    } | null;
+  } | null;
+  series: {
+    title: string;
+    slug: Slug;
+  } | null;
+}>;
+
+// Source: sanity/lib/queries.ts
+// Variable: allCaseStudiesQuery
+// Query: *[_type == "caseStudy"] | order(order asc, startDate desc) {    _id,    title,    slug,    role,    sector,    company,    heroImage { asset->{_id, url} },    stack,    startDate,    endDate  }
+export type AllCaseStudiesQueryResult = Array<{
+  _id: string;
+  title: string;
+  slug: Slug;
+  role: string | null;
+  sector: "applied-ai" | "backend" | "founder" | "frontend" | "mobile" | null;
+  company: string | null;
+  heroImage: {
+    asset: {
+      _id: string;
+      url: string;
+    } | null;
+  } | null;
+  stack: Array<string> | null;
+  startDate: string | null;
+  endDate: string | null;
+}>;
+
+// Source: sanity/lib/queries.ts
+// Variable: caseStudyBySlugQuery
+// Query: *[_type == "caseStudy" && slug.current == $slug][0] {    _id,    title,    slug,    role,    sector,    company,    startDate,    endDate,    heroImage { asset->{_id, url} },    gallery[] { asset->{_id, url} },    stack,    problem,    architecture,    myRole,    outcome,    liveUrl,    "relatedArticles": relatedArticles[]->{      _id, title, slug, excerpt, publishedAt    }  }
+export type CaseStudyBySlugQueryResult = {
+  _id: string;
+  title: string;
+  slug: Slug;
+  role: string | null;
+  sector: "applied-ai" | "backend" | "founder" | "frontend" | "mobile" | null;
+  company: string | null;
+  startDate: string | null;
+  endDate: string | null;
+  heroImage: {
+    asset: {
+      _id: string;
+      url: string;
+    } | null;
+  } | null;
+  gallery: Array<{
+    asset: {
+      _id: string;
+      url: string;
+    } | null;
+  }> | null;
+  stack: Array<string> | null;
+  problem: Array<
+    | {
+        children?: Array<{
+          marks?: Array<string>;
+          text?: string;
+          _type: "span";
+          _key: string;
+        }>;
+        style?:
+          | "blockquote"
+          | "h1"
+          | "h2"
+          | "h3"
+          | "h4"
+          | "h5"
+          | "h6"
+          | "normal";
+        listItem?: "bullet" | "number";
+        markDefs?: Array<{
+          href?: string;
+          _type: "link";
+          _key: string;
+        }>;
+        level?: number;
+        _type: "block";
+        _key: string;
+      }
+    | {
+        language?: string;
+        code?: string;
+        _type: "codeBlock";
+        _key: string;
+      }
+    | {
+        asset?: SanityImageAssetReference;
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
+        _key: string;
+      }
+  > | null;
+  architecture: Array<
+    | {
+        children?: Array<{
+          marks?: Array<string>;
+          text?: string;
+          _type: "span";
+          _key: string;
+        }>;
+        style?:
+          | "blockquote"
+          | "h1"
+          | "h2"
+          | "h3"
+          | "h4"
+          | "h5"
+          | "h6"
+          | "normal";
+        listItem?: "bullet" | "number";
+        markDefs?: Array<{
+          href?: string;
+          _type: "link";
+          _key: string;
+        }>;
+        level?: number;
+        _type: "block";
+        _key: string;
+      }
+    | {
+        language?: string;
+        code?: string;
+        _type: "codeBlock";
+        _key: string;
+      }
+    | {
+        asset?: SanityImageAssetReference;
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
+        _key: string;
+      }
+  > | null;
+  myRole: Array<
+    | {
+        children?: Array<{
+          marks?: Array<string>;
+          text?: string;
+          _type: "span";
+          _key: string;
+        }>;
+        style?:
+          | "blockquote"
+          | "h1"
+          | "h2"
+          | "h3"
+          | "h4"
+          | "h5"
+          | "h6"
+          | "normal";
+        listItem?: "bullet" | "number";
+        markDefs?: Array<{
+          href?: string;
+          _type: "link";
+          _key: string;
+        }>;
+        level?: number;
+        _type: "block";
+        _key: string;
+      }
+    | {
+        language?: string;
+        code?: string;
+        _type: "codeBlock";
+        _key: string;
+      }
+    | {
+        asset?: SanityImageAssetReference;
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
+        _key: string;
+      }
+  > | null;
+  outcome: Array<
+    | {
+        children?: Array<{
+          marks?: Array<string>;
+          text?: string;
+          _type: "span";
+          _key: string;
+        }>;
+        style?:
+          | "blockquote"
+          | "h1"
+          | "h2"
+          | "h3"
+          | "h4"
+          | "h5"
+          | "h6"
+          | "normal";
+        listItem?: "bullet" | "number";
+        markDefs?: Array<{
+          href?: string;
+          _type: "link";
+          _key: string;
+        }>;
+        level?: number;
+        _type: "block";
+        _key: string;
+      }
+    | {
+        language?: string;
+        code?: string;
+        _type: "codeBlock";
+        _key: string;
+      }
+    | {
+        asset?: SanityImageAssetReference;
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
+        _key: string;
+      }
+  > | null;
+  liveUrl: string | null;
+  relatedArticles: Array<{
+    _id: string;
+    title: string;
+    slug: Slug;
+    excerpt: string | null;
+    publishedAt: string;
+  }> | null;
+} | null;
+
+// Source: sanity/lib/queries.ts
+// Variable: allCaseStudySlugsQuery
+// Query: *[_type == "caseStudy" && defined(slug.current)][].slug.current
+export type AllCaseStudySlugsQueryResult = Array<string>;
+
+// Source: sanity/lib/queries.ts
+// Variable: allArticlesQuery
+// Query: *[_type == "article"] | order(publishedAt desc) {    _id,    title,    slug,    excerpt,    publishedAt,    coverImage { asset->{_id, url} },    series->{title, slug},    seriesOrder,    tags  }
+export type AllArticlesQueryResult = Array<{
+  _id: string;
+  title: string;
+  slug: Slug;
+  excerpt: string | null;
+  publishedAt: string;
+  coverImage: {
+    asset: {
+      _id: string;
+      url: string;
+    } | null;
+  } | null;
+  series: {
+    title: string;
+    slug: Slug;
+  } | null;
+  seriesOrder: number | null;
+  tags: Array<string> | null;
+}>;
+
+// Source: sanity/lib/queries.ts
+// Variable: articleSeriesAllQuery
+// Query: *[_type == "articleSeries"] | order(title asc) {    _id,    title,    slug,    description,    coverImage { asset->{_id, url} },    "articles": *[_type == "article" && references(^._id)] | order(seriesOrder asc, publishedAt asc) {      _id, title, slug, excerpt, publishedAt    }  }
+export type ArticleSeriesAllQueryResult = Array<{
+  _id: string;
+  title: string;
+  slug: Slug;
+  description: string | null;
+  coverImage: {
+    asset: {
+      _id: string;
+      url: string;
+    } | null;
+  } | null;
+  articles: Array<{
+    _id: string;
+    title: string;
+    slug: Slug;
+    excerpt: string | null;
+    publishedAt: string;
+  }>;
+}>;
+
+// Source: sanity/lib/queries.ts
+// Variable: articleBySlugQuery
+// Query: *[_type == "article" && slug.current == $slug][0] {    _id,    title,    slug,    excerpt,    body,    publishedAt,    mediumUrl,    canonicalUrl,    coverImage { asset->{_id, url} },    series->{title, slug},    seriesOrder,    tags,    readingTime  }
+export type ArticleBySlugQueryResult = {
+  _id: string;
+  title: string;
+  slug: Slug;
+  excerpt: string | null;
+  body: Array<
+    | {
+        children?: Array<{
+          marks?: Array<string>;
+          text?: string;
+          _type: "span";
+          _key: string;
+        }>;
+        style?:
+          | "blockquote"
+          | "h1"
+          | "h2"
+          | "h3"
+          | "h4"
+          | "h5"
+          | "h6"
+          | "normal";
+        listItem?: "bullet" | "number";
+        markDefs?: Array<{
+          href?: string;
+          _type: "link";
+          _key: string;
+        }>;
+        level?: number;
+        _type: "block";
+        _key: string;
+      }
+    | {
+        language?: string;
+        code?: string;
+        _type: "codeBlock";
+        _key: string;
+      }
+    | {
+        asset?: SanityImageAssetReference;
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        _type: "image";
+        _key: string;
+      }
+  > | null;
+  publishedAt: string;
+  mediumUrl: string | null;
+  canonicalUrl: string | null;
+  coverImage: {
+    asset: {
+      _id: string;
+      url: string;
+    } | null;
+  } | null;
+  series: {
+    title: string;
+    slug: Slug;
+  } | null;
+  seriesOrder: number | null;
+  tags: Array<string> | null;
+  readingTime: number | null;
+} | null;
+
+// Source: sanity/lib/queries.ts
+// Variable: allArticleSlugsQuery
+// Query: *[_type == "article" && defined(slug.current)][].slug.current
+export type AllArticleSlugsQueryResult = Array<string>;
+
+// Source: sanity/lib/queries.ts
+// Variable: aboutQuery
+// Query: {    "settings": *[_type == "siteSettings" && _id == "siteSettings"][0]{      bio, location, availability, socials, calcomUrl    },    "recommendations": *[_type == "recommendation"] | order(order asc, date desc) {      _id, name, role, company, date, quote, linkedinUrl,      headshot { asset->{_id, url} }    }  }
+export type AboutQueryResult = {
+  settings: {
+    bio: string | null;
+    location: string | null;
+    availability: "available" | "not-looking" | "open-to-conversations" | null;
+    socials: {
+      github?: string;
+      linkedin?: string;
+      medium?: string;
+      twitter?: string;
+      email?: string;
+    } | null;
+    calcomUrl: string | null;
+  } | null;
+  recommendations: Array<{
+    _id: string;
+    name: string;
+    role: string | null;
+    company: string | null;
+    date: string | null;
+    quote: string;
+    linkedinUrl: string | null;
+    headshot: {
+      asset: {
+        _id: string;
+        url: string;
+      } | null;
+    } | null;
+  }>;
+};
+
+// Source: sanity/lib/queries.ts
+// Variable: resumeQuery
+// Query: {    "settings": *[_type == "siteSettings" && _id == "siteSettings"][0]{      bio, location, availability, socials, calcomUrl    },    "experience": *[_type == "experience"] | order(order asc, startDate desc) {      _id, company, location, title, startDate, endDate, bullets, stack    },    "skills": *[_type == "skill"] | order(group asc, order asc) {      _id, group, name, level    }  }
+export type ResumeQueryResult = {
+  settings: {
+    bio: string | null;
+    location: string | null;
+    availability: "available" | "not-looking" | "open-to-conversations" | null;
+    socials: {
+      github?: string;
+      linkedin?: string;
+      medium?: string;
+      twitter?: string;
+      email?: string;
+    } | null;
+    calcomUrl: string | null;
+  } | null;
+  experience: Array<{
+    _id: string;
+    company: string;
+    location: string | null;
+    title: string;
+    startDate: string;
+    endDate: string | null;
+    bullets: Array<{
+      children?: Array<{
+        marks?: Array<string>;
+        text?: string;
+        _type: "span";
+        _key: string;
+      }>;
+      style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
+      listItem?: "bullet" | "number";
+      markDefs?: Array<{
+        href?: string;
+        _type: "link";
+        _key: string;
+      }>;
+      level?: number;
+      _type: "block";
+      _key: string;
+    }> | null;
+    stack: Array<string> | null;
+  }>;
+  skills: Array<{
+    _id: string;
+    group: "applied-ai" | "backend-cloud" | "frontend" | "languages";
+    name: string;
+    level: "core" | "familiar" | "strong" | null;
+  }>;
+};
+
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
     '\n  *[_type == "siteSettings" && _id == "siteSettings"][0] {\n    bio,\n    location,\n    availability,\n    socials,\n    calcomUrl\n  }\n': SiteSettingsQueryResult;
+    '\n  *[_type == "recommendation" && isHeroQuote == true][0] {\n    _id,\n    name,\n    role,\n    company,\n    quote,\n    linkedinUrl,\n    headshot { asset->{_id, url} }\n  }\n': HeroQuoteQueryResult;
+    '\n  *[_type == "caseStudy" && isFeatured == true] | order(order asc)[0...3] {\n    _id,\n    title,\n    slug,\n    role,\n    sector,\n    company,\n    heroImage { asset->{_id, url} },\n    stack\n  }\n': HomeFeaturedQueryResult;
+    '\n  *[_type == "article"] | order(publishedAt desc)[0...3] {\n    _id,\n    title,\n    slug,\n    excerpt,\n    publishedAt,\n    coverImage { asset->{_id, url} },\n    series->{title, slug}\n  }\n': HomeLatestArticlesQueryResult;
+    '\n  *[_type == "caseStudy"] | order(order asc, startDate desc) {\n    _id,\n    title,\n    slug,\n    role,\n    sector,\n    company,\n    heroImage { asset->{_id, url} },\n    stack,\n    startDate,\n    endDate\n  }\n': AllCaseStudiesQueryResult;
+    '\n  *[_type == "caseStudy" && slug.current == $slug][0] {\n    _id,\n    title,\n    slug,\n    role,\n    sector,\n    company,\n    startDate,\n    endDate,\n    heroImage { asset->{_id, url} },\n    gallery[] { asset->{_id, url} },\n    stack,\n    problem,\n    architecture,\n    myRole,\n    outcome,\n    liveUrl,\n    "relatedArticles": relatedArticles[]->{\n      _id, title, slug, excerpt, publishedAt\n    }\n  }\n': CaseStudyBySlugQueryResult;
+    '\n  *[_type == "caseStudy" && defined(slug.current)][].slug.current\n': AllCaseStudySlugsQueryResult;
+    '\n  *[_type == "article"] | order(publishedAt desc) {\n    _id,\n    title,\n    slug,\n    excerpt,\n    publishedAt,\n    coverImage { asset->{_id, url} },\n    series->{title, slug},\n    seriesOrder,\n    tags\n  }\n': AllArticlesQueryResult;
+    '\n  *[_type == "articleSeries"] | order(title asc) {\n    _id,\n    title,\n    slug,\n    description,\n    coverImage { asset->{_id, url} },\n    "articles": *[_type == "article" && references(^._id)] | order(seriesOrder asc, publishedAt asc) {\n      _id, title, slug, excerpt, publishedAt\n    }\n  }\n': ArticleSeriesAllQueryResult;
+    '\n  *[_type == "article" && slug.current == $slug][0] {\n    _id,\n    title,\n    slug,\n    excerpt,\n    body,\n    publishedAt,\n    mediumUrl,\n    canonicalUrl,\n    coverImage { asset->{_id, url} },\n    series->{title, slug},\n    seriesOrder,\n    tags,\n    readingTime\n  }\n': ArticleBySlugQueryResult;
+    '\n  *[_type == "article" && defined(slug.current)][].slug.current\n': AllArticleSlugsQueryResult;
+    '\n  {\n    "settings": *[_type == "siteSettings" && _id == "siteSettings"][0]{\n      bio, location, availability, socials, calcomUrl\n    },\n    "recommendations": *[_type == "recommendation"] | order(order asc, date desc) {\n      _id, name, role, company, date, quote, linkedinUrl,\n      headshot { asset->{_id, url} }\n    }\n  }\n': AboutQueryResult;
+    '\n  {\n    "settings": *[_type == "siteSettings" && _id == "siteSettings"][0]{\n      bio, location, availability, socials, calcomUrl\n    },\n    "experience": *[_type == "experience"] | order(order asc, startDate desc) {\n      _id, company, location, title, startDate, endDate, bullets, stack\n    },\n    "skills": *[_type == "skill"] | order(group asc, order asc) {\n      _id, group, name, level\n    }\n  }\n': ResumeQueryResult;
   }
 }
