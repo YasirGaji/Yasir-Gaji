@@ -1,65 +1,90 @@
-import Image from "next/image";
+import Link from "next/link";
+import { ArticleCard } from "@/components/article-card";
+import { CaseStudyCard } from "@/components/case-study-card";
+import { HeroQuote } from "@/components/hero-quote";
+import { buttonVariants } from "@/components/ui/button";
+import { client } from "@/sanity/lib/client";
+import {
+  homeFeaturedQuery,
+  homeLatestArticlesQuery,
+  siteSettingsQuery,
+} from "@/sanity/lib/queries";
 
-export default function Home() {
+export default async function HomePage() {
+  const [settings, featured, latest] = await Promise.all([
+    client.fetch(siteSettingsQuery),
+    client.fetch(homeFeaturedQuery),
+    client.fetch(homeLatestArticlesQuery),
+  ]);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+    <div className="mx-auto max-w-3xl px-6 py-16 md:py-24">
+      <section>
+        <h1 className="font-display text-4xl font-medium leading-tight md:text-5xl">Yasir Gaji</h1>
+        <p className="mt-3 text-lg text-muted-editorial-light dark-editorial:text-muted-editorial-dark">
+          Senior Software Engineer · Applied AI & Backend Architecture
+        </p>
+        {settings?.bio && <p className="mt-6 text-lg leading-relaxed">{settings.bio}</p>}
+        <HeroQuote />
+      </section>
+
+      {featured && featured.length > 0 && (
+        <section className="mt-20">
+          <div className="mb-6 flex items-baseline justify-between">
+            <h2 className="font-display text-2xl font-medium">Currently shipping</h2>
+            <Link href="/work" className="text-sm underline underline-offset-4">
+              All work →
+            </Link>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+            {featured.map((c) => (
+              <CaseStudyCard key={c._id} card={c} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {latest && latest.length > 0 && (
+        <section className="mt-20">
+          <div className="mb-2 flex items-baseline justify-between">
+            <h2 className="font-display text-2xl font-medium">Recent writing</h2>
+            <Link href="/writing" className="text-sm underline underline-offset-4">
+              All writing →
+            </Link>
+          </div>
+          <div>
+            {latest.map((a) => (
+              <ArticleCard key={a._id} card={a} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      <section className="mt-20 rounded-md border border-line-editorial-light p-8 text-center dark-editorial:border-line-editorial-dark">
+        <h2 className="font-display text-2xl font-medium">
+          Available for senior IC + AI architect roles
+        </h2>
+        <p className="mt-3 text-muted-editorial-light dark-editorial:text-muted-editorial-dark">
+          15-minute intro, no slides, real questions only.
+        </p>
+        {settings?.calcomUrl ? (
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href={settings.calcomUrl}
             target="_blank"
             rel="noopener noreferrer"
+            className={buttonVariants({ variant: "default", className: "mt-5" })}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+            Book a call
           </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        ) : (
+          <Link
+            href="/contact"
+            className={buttonVariants({ variant: "default", className: "mt-5" })}
           >
-            Documentation
-          </a>
-        </div>
-      </main>
+            Get in touch
+          </Link>
+        )}
+      </section>
     </div>
   );
 }
