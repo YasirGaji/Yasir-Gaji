@@ -1,11 +1,23 @@
+import { ActivityBar } from "./activity-bar";
+import { Editor } from "./editor";
+import { Explorer } from "./explorer";
+import { StatusBar } from "./status-bar";
+import { Terminal } from "./terminal";
+import { TitleBar } from "./title-bar";
+
 export function IDEShell({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-full flex-col bg-bg-ide-editor font-mono text-fg-ide-default">
-      <div className="border-b border-bg-ide-activity p-3 text-sm">
-        [IDE mode — chrome WIP, Phase 2]
+    <div className="flex h-dvh flex-col overflow-hidden bg-bg-ide-editor text-fg-ide-default">
+      <TitleBar />
+      <div className="flex flex-1 overflow-hidden">
+        <ActivityBar />
+        <Explorer />
+        <div className="flex flex-1 flex-col overflow-hidden">
+          <Editor>{children}</Editor>
+          <Terminal />
+        </div>
       </div>
-      <main className="flex-1 p-6">{children}</main>
-      <div className="border-t border-bg-ide-activity p-2 text-xs">[status bar WIP]</div>
+      <StatusBar />
     </div>
   );
 }

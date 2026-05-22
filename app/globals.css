@@ -60,6 +60,10 @@
     color: var(--color-fg-ide-default);
     font-family: var(--font-mono);
   }
+  html[data-mode="ide"] .font-display,
+  html[data-mode="ide"] .font-body {
+    font-family: var(--font-mono);
+  }
   html[data-theme="dark"][data-mode="editorial"] body {
     background: var(--color-bg-editorial-dark);
     color: var(--color-ink-editorial-dark);

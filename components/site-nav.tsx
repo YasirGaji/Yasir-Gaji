@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ModeToggle } from "./mode-toggle";
 import { ThemeToggle } from "./theme-toggle";
 
 const links = [
@@ -21,6 +22,7 @@ export function SiteNav() {
               {l.label}
             </Link>
           ))}
+          <ModeToggle />
           <ThemeToggle />
         </nav>
       </div>
