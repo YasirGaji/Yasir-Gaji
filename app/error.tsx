@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 
-export default function Error({ reset }: { error: Error; reset: () => void }) {
+export default function GlobalError({ reset }: { error: Error; reset: () => void }) {
   return (
     <div className="mx-auto max-w-2xl px-6 py-24 text-center">
       <h1 className="font-display text-4xl font-medium">Something broke</h1>

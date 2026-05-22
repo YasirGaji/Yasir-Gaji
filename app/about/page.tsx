@@ -15,7 +15,7 @@ export default async function AboutPage() {
   const recs = data?.recommendations ?? [];
 
   return (
-    <div className="mx-auto max-w-3xl px-6 py-16 md:py-24">
+    <div className="mx-auto max-w-4xl px-6 py-16 md:py-24">
       <header>
         <h1 className="font-display text-4xl font-medium md:text-5xl">About</h1>
         {settings?.location && (
@@ -30,7 +30,7 @@ export default async function AboutPage() {
       {recs.length > 0 && (
         <section className="mt-16">
           <h2 className="font-display text-2xl font-medium">Recommendations</h2>
-          <div className="mt-6 grid gap-5 sm:grid-cols-2">
+          <div className="mt-6 space-y-5">
             {recs.map((r) => (
               <RecommendationCard key={r._id} rec={r} />
             ))}
