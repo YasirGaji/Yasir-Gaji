@@ -1,29 +1,12 @@
+import { GeistMono } from "geist/font/mono";
+import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
-import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import { ViewTransitions } from "next-view-transitions";
 import { MobileModeGuard } from "@/components/mobile-mode-guard";
 import { ModeShell } from "@/components/mode-shell";
 import { getModeFromCookie } from "@/lib/mode-cookie";
 import { getThemeFromCookie } from "@/lib/theme-cookie";
 import "./globals.css";
-
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-display",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-body",
-  display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: {
@@ -37,7 +20,7 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const [theme, mode] = await Promise.all([getThemeFromCookie(), getModeFromCookie()]);
-  const fontVars = `${fraunces.variable} ${inter.variable} ${jetbrainsMono.variable}`;
+  const fontVars = `${GeistSans.variable} ${GeistMono.variable}`;
   const className = `${fontVars} h-full antialiased${theme === "dark" ? " dark" : ""}`;
 
   return (

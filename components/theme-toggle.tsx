@@ -1,5 +1,6 @@
 "use client";
 
+import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 
@@ -34,22 +35,35 @@ export function ThemeToggle() {
 
   const flip = () => {
     const next: Theme = theme === "light" ? "dark" : "light";
-    setTheme(next);
-    applyTheme(next);
+    const apply = () => {
+      setTheme(next);
+      applyTheme(next);
+    };
+    if (typeof document.startViewTransition === "function") {
+      document.startViewTransition(apply);
+    } else {
+      apply();
+    }
   };
 
-  // Render a stable label until mounted to avoid hydration mismatch
-  const label = mounted ? (theme === "light" ? "Dark" : "Light") : "Theme";
+  // Show a stable placeholder pre-mount to avoid hydration mismatch
+  if (!mounted) {
+    return (
+      <Button type="button" variant="ghost" size="icon" aria-label="Theme toggle" disabled>
+        <Sun className="size-4" />
+      </Button>
+    );
+  }
 
   return (
     <Button
       type="button"
       variant="ghost"
-      size="sm"
+      size="icon"
       onClick={flip}
       aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
     >
-      {label}
+      {theme === "light" ? <Moon className="size-4" /> : <Sun className="size-4" />}
     </Button>
   );
 }

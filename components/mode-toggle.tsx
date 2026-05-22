@@ -47,9 +47,9 @@ export function ModeToggle({ className }: { className?: string }) {
       size="sm"
       onClick={flip}
       aria-label={`Switch to ${mode === "editorial" ? "IDE" : "editorial"} mode`}
-      className={className}
+      className={`font-mono ${className ?? ""}`}
     >
-      {mode === "editorial" ? "IDE" : "Editorial"}
+      {mode === "editorial" ? "</>" : "Aa"}
     </Button>
   );
 }
