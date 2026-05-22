@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
+import { ViewTransitions } from "next-view-transitions";
+import { MobileModeGuard } from "@/components/mobile-mode-guard";
 import { ModeShell } from "@/components/mode-shell";
 import { getModeFromCookie } from "@/lib/mode-cookie";
 import { getThemeFromCookie } from "@/lib/theme-cookie";
@@ -39,15 +41,18 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const className = `${fontVars} h-full antialiased${theme === "dark" ? " dark" : ""}`;
 
   return (
-    <html
-      lang="en"
-      data-mode={mode}
-      {...(theme ? { "data-theme": theme } : {})}
-      className={className}
-    >
-      <body className="min-h-full flex flex-col">
-        <ModeShell>{children}</ModeShell>
-      </body>
-    </html>
+    <ViewTransitions>
+      <html
+        lang="en"
+        data-mode={mode}
+        {...(theme ? { "data-theme": theme } : {})}
+        className={className}
+      >
+        <body className="min-h-full flex flex-col">
+          <MobileModeGuard />
+          <ModeShell>{children}</ModeShell>
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }

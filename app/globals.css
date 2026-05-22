@@ -39,6 +39,11 @@
   --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
 }
 
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 250ms;
+}
+
 @layer base {
   html {
     color-scheme: light dark;

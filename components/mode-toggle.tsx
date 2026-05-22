@@ -24,11 +24,20 @@ export function ModeToggle({ className }: { className?: string }) {
   const flip = () => {
     const next: Mode = mode === "editorial" ? "ide" : "editorial";
     document.cookie = `mode=${next}; path=/; max-age=${60 * 60 * 24 * 365}; SameSite=Lax`;
-    document.documentElement.setAttribute("data-mode", next);
-    setMode(next);
-    startTransition(() => {
-      router.refresh();
-    });
+
+    const apply = () => {
+      document.documentElement.setAttribute("data-mode", next);
+      setMode(next);
+      startTransition(() => {
+        router.refresh();
+      });
+    };
+
+    if (typeof document.startViewTransition === "function") {
+      document.startViewTransition(apply);
+    } else {
+      apply();
+    }
   };
 
   return (
