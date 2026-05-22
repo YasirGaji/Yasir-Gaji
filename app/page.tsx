@@ -22,7 +22,7 @@ export default async function HomePage() {
       <section>
         <h1 className="font-display text-4xl font-medium leading-tight md:text-5xl">Yasir Gaji</h1>
         <p className="mt-3 text-lg text-muted-editorial-light dark-editorial:text-muted-editorial-dark">
-          Senior Software Engineer · Applied AI & Backend Architecture
+          Senior Software Engineer · Applied AI & Software Architecture
         </p>
         {settings?.bio && <p className="mt-6 text-lg leading-relaxed">{settings.bio}</p>}
         <HeroQuote />
