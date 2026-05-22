@@ -34,6 +34,7 @@ export default defineType({
         list: [
           { title: "Applied AI", value: "applied-ai" },
           { title: "Backend", value: "backend" },
+          { title: "Full-stack", value: "fullstack" },
           { title: "Founder", value: "founder" },
           { title: "Mobile", value: "mobile" },
           { title: "Frontend", value: "frontend" },

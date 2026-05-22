@@ -237,7 +237,13 @@ export type CaseStudy = {
   title: string;
   slug: Slug;
   role?: string;
-  sector?: "applied-ai" | "backend" | "founder" | "mobile" | "frontend";
+  sector?:
+    | "applied-ai"
+    | "backend"
+    | "fullstack"
+    | "founder"
+    | "mobile"
+    | "frontend";
   company?: string;
   startDate?: string;
   endDate?: string;
@@ -620,7 +626,14 @@ export type HomeFeaturedQueryResult = Array<{
   title: string;
   slug: Slug;
   role: string | null;
-  sector: "applied-ai" | "backend" | "founder" | "frontend" | "mobile" | null;
+  sector:
+    | "applied-ai"
+    | "backend"
+    | "founder"
+    | "frontend"
+    | "fullstack"
+    | "mobile"
+    | null;
   company: string | null;
   heroImage: {
     asset: {
@@ -660,7 +673,14 @@ export type AllCaseStudiesQueryResult = Array<{
   title: string;
   slug: Slug;
   role: string | null;
-  sector: "applied-ai" | "backend" | "founder" | "frontend" | "mobile" | null;
+  sector:
+    | "applied-ai"
+    | "backend"
+    | "founder"
+    | "frontend"
+    | "fullstack"
+    | "mobile"
+    | null;
   company: string | null;
   heroImage: {
     asset: {
@@ -681,7 +701,14 @@ export type CaseStudyBySlugQueryResult = {
   title: string;
   slug: Slug;
   role: string | null;
-  sector: "applied-ai" | "backend" | "founder" | "frontend" | "mobile" | null;
+  sector:
+    | "applied-ai"
+    | "backend"
+    | "founder"
+    | "frontend"
+    | "fullstack"
+    | "mobile"
+    | null;
   company: string | null;
   startDate: string | null;
   endDate: string | null;
