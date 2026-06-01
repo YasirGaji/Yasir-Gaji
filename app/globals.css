@@ -72,11 +72,10 @@
   * {
     @apply border-border outline-ring/50;
   }
-  @media (prefers-color-scheme: dark) {
-    html[data-mode="editorial"]:not([data-theme]) body {
-      background: var(--color-bg-editorial-dark);
-      color: var(--color-ink-editorial-dark);
-    }
+  /* No-JS fallback: dark by default when the pre-paint script hasn't run */
+  html[data-mode="editorial"]:not([data-theme]) body {
+    background: var(--color-bg-editorial-dark);
+    color: var(--color-ink-editorial-dark);
   }
 }
 
