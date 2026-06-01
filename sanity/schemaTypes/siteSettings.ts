@@ -37,6 +37,14 @@ export default defineType({
     }),
     defineField({ name: "calcomUrl", title: "Cal.com booking URL", type: "url" }),
     defineField({
+      name: "ideBackground",
+      title: "IDE Background",
+      description:
+        "Wallpaper image shown behind the IDE mode shell (desktop, non-maximized window).",
+      type: "image",
+      options: { hotspot: true },
+    }),
+    defineField({
       name: "cvPdfUrl",
       title: "Generated CV PDF URL",
       type: "url",

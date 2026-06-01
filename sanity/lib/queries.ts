@@ -6,7 +6,16 @@ export const siteSettingsQuery = defineQuery(`
     location,
     availability,
     socials,
-    calcomUrl
+    calcomUrl,
+    ideBackground { asset->{_id, url}, hotspot, crop }
+  }
+`);
+
+export const ideBackgroundQuery = defineQuery(`
+  *[_type == "siteSettings" && _id == "siteSettings"][0].ideBackground {
+    asset->{_id, url},
+    hotspot,
+    crop
   }
 `);
 
