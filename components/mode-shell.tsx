@@ -1,4 +1,5 @@
 import { headers } from "next/headers";
+import Image from "next/image";
 import { IDEShell } from "@/components/ide";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNav } from "@/components/site-nav";
@@ -21,7 +22,25 @@ export async function ModeShell({ children }: { children: React.ReactNode }) {
   return (
     <>
       <SiteNav />
-      <main className="flex-1">{children}</main>
+      <main className="flex-1">
+        {/* Decorative dotted-globe backdrop, pinned to the viewport so the
+            page scrolls over it. Inverted in light mode so the light dots
+            stay visible on the off-white background. */}
+        <div
+          aria-hidden
+          className="pointer-events-none fixed inset-x-0 top-0 -z-10 select-none overflow-hidden"
+        >
+          <Image
+            src="/Globe.png"
+            alt=""
+            width={1134}
+            height={446}
+            sizes="100vw"
+            className="h-auto w-full opacity-20 invert mask-[linear-gradient(to_bottom,black_35%,transparent)] dark-editorial:opacity-15 dark-editorial:invert-0"
+          />
+        </div>
+        {children}
+      </main>
       <SiteFooter />
     </>
   );

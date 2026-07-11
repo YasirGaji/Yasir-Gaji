@@ -11,10 +11,26 @@ export async function SiteFooter() {
           © {new Date().getFullYear()} Yasir Gaji. {data?.location ?? ""}
         </p>
         <div className="flex gap-4">
-          {s?.github && <a href={s.github}>GitHub</a>}
-          {s?.linkedin && <a href={s.linkedin}>LinkedIn</a>}
-          {s?.medium && <a href={s.medium}>Medium</a>}
-          {s?.twitter && <a href={s.twitter}>X</a>}
+          {s?.github && (
+            <a href={s.github} target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+          )}
+          {s?.linkedin && (
+            <a href={s.linkedin} target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+          )}
+          {s?.medium && (
+            <a href={s.medium} target="_blank" rel="noopener noreferrer">
+              Medium
+            </a>
+          )}
+          {s?.twitter && (
+            <a href={s.twitter} target="_blank" rel="noopener noreferrer">
+              X
+            </a>
+          )}
           {s?.email && <a href={`mailto:${s.email}`}>Email</a>}
         </div>
       </div>

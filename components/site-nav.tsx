@@ -1,6 +1,6 @@
 import { Menu } from "lucide-react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import {
   Sheet,
   SheetClose,
@@ -47,13 +47,14 @@ export function SiteNav() {
         <div className="flex items-center gap-1 md:hidden">
           <ThemeToggle />
           <Sheet>
+            {/* Styled via buttonVariants instead of rendering <Button> —
+                nesting two data-slot owners hydrates inconsistently. */}
             <SheetTrigger
-              render={
-                <Button type="button" variant="ghost" size="icon" aria-label="Open menu">
-                  <Menu className="size-5" />
-                </Button>
-              }
-            />
+              aria-label="Open menu"
+              className={buttonVariants({ variant: "ghost", size: "icon" })}
+            >
+              <Menu className="size-5" />
+            </SheetTrigger>
             <SheetContent side="right" className="w-72">
               <SheetHeader>
                 <SheetTitle className="font-mono text-base">[yg]</SheetTitle>

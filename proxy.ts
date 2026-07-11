@@ -7,9 +7,18 @@ export function proxy(request: NextRequest) {
   const host = request.headers.get("host") ?? "";
   const { pathname } = request.nextUrl;
 
-  // Studio subdomain: rewrite root path to /studio internally so
+  // Studio subdomain canonicalize: if someone lands on
+  // studio.yasirgaji.com/studio/*, strip the /studio prefix so the URL bar
+  // matches Sanity's basePath: "/" in production.
+  if (host === STUDIO_HOST && pathname.startsWith("/studio")) {
+    const url = request.nextUrl.clone();
+    url.pathname = pathname.replace(/^\/studio/, "") || "/";
+    return NextResponse.redirect(url, 308);
+  }
+
+  // Studio subdomain: rewrite bare paths to /studio/* internally so
   // app/studio/[[...tool]]/page.tsx handles the request.
-  if (host === STUDIO_HOST && !pathname.startsWith("/studio")) {
+  if (host === STUDIO_HOST) {
     const url = request.nextUrl.clone();
     url.pathname = `/studio${pathname === "/" ? "" : pathname}`;
     return NextResponse.rewrite(url);

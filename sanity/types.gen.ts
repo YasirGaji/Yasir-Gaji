@@ -112,6 +112,8 @@ export type Recommendation = {
   date?: string;
   quote: string;
   linkedinUrl?: string;
+  recommendationUrl?: string;
+  companyUrl?: string;
   headshot?: {
     asset?: SanityImageAssetReference;
     media?: unknown;
@@ -458,6 +460,13 @@ export type SiteSettings = {
     email?: string;
   };
   calcomUrl?: string;
+  ideBackground?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
   cvPdfUrl?: string;
   resumeAsOf?: string;
 };
@@ -585,7 +594,7 @@ export type AllSanitySchemaTypes =
 
 // Source: sanity/lib/queries.ts
 // Variable: siteSettingsQuery
-// Query: *[_type == "siteSettings" && _id == "siteSettings"][0] {    bio,    location,    availability,    socials,    calcomUrl  }
+// Query: *[_type == "siteSettings" && _id == "siteSettings"][0] {    bio,    location,    availability,    socials,    calcomUrl,    ideBackground { asset->{_id, url}, hotspot, crop }  }
 export type SiteSettingsQueryResult = {
   bio: string | null;
   location: string | null;
@@ -598,11 +607,31 @@ export type SiteSettingsQueryResult = {
     email?: string;
   } | null;
   calcomUrl: string | null;
+  ideBackground: {
+    asset: {
+      _id: string;
+      url: string;
+    } | null;
+    hotspot: SanityImageHotspot | null;
+    crop: SanityImageCrop | null;
+  } | null;
+} | null;
+
+// Source: sanity/lib/queries.ts
+// Variable: ideBackgroundQuery
+// Query: *[_type == "siteSettings" && _id == "siteSettings"][0].ideBackground {    asset->{_id, url},    hotspot,    crop  }
+export type IdeBackgroundQueryResult = {
+  asset: {
+    _id: string;
+    url: string;
+  } | null;
+  hotspot: SanityImageHotspot | null;
+  crop: SanityImageCrop | null;
 } | null;
 
 // Source: sanity/lib/queries.ts
 // Variable: heroQuoteQuery
-// Query: *[_type == "recommendation" && isHeroQuote == true][0] {    _id,    name,    role,    company,    quote,    linkedinUrl,    headshot { asset->{_id, url} }  }
+// Query: *[_type == "recommendation" && isHeroQuote == true][0] {    _id,    name,    role,    company,    quote,    linkedinUrl,    recommendationUrl,    companyUrl,    headshot { asset->{_id, url} }  }
 export type HeroQuoteQueryResult = {
   _id: string;
   name: string;
@@ -610,6 +639,8 @@ export type HeroQuoteQueryResult = {
   company: string | null;
   quote: string;
   linkedinUrl: string | null;
+  recommendationUrl: string | null;
+  companyUrl: string | null;
   headshot: {
     asset: {
       _id: string;
@@ -1117,8 +1148,9 @@ export type ResumeQueryResult = {
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    '\n  *[_type == "siteSettings" && _id == "siteSettings"][0] {\n    bio,\n    location,\n    availability,\n    socials,\n    calcomUrl\n  }\n': SiteSettingsQueryResult;
-    '\n  *[_type == "recommendation" && isHeroQuote == true][0] {\n    _id,\n    name,\n    role,\n    company,\n    quote,\n    linkedinUrl,\n    headshot { asset->{_id, url} }\n  }\n': HeroQuoteQueryResult;
+    '\n  *[_type == "siteSettings" && _id == "siteSettings"][0] {\n    bio,\n    location,\n    availability,\n    socials,\n    calcomUrl,\n    ideBackground { asset->{_id, url}, hotspot, crop }\n  }\n': SiteSettingsQueryResult;
+    '\n  *[_type == "siteSettings" && _id == "siteSettings"][0].ideBackground {\n    asset->{_id, url},\n    hotspot,\n    crop\n  }\n': IdeBackgroundQueryResult;
+    '\n  *[_type == "recommendation" && isHeroQuote == true][0] {\n    _id,\n    name,\n    role,\n    company,\n    quote,\n    linkedinUrl,\n    recommendationUrl,\n    companyUrl,\n    headshot { asset->{_id, url} }\n  }\n': HeroQuoteQueryResult;
     '\n  *[_type == "caseStudy" && isFeatured == true] | order(order asc)[0...3] {\n    _id,\n    title,\n    slug,\n    role,\n    sector,\n    company,\n    heroImage { asset->{_id, url} },\n    stack\n  }\n': HomeFeaturedQueryResult;
     '\n  *[_type == "article"] | order(publishedAt desc)[0...3] {\n    _id,\n    title,\n    slug,\n    excerpt,\n    publishedAt,\n    coverImage { asset->{_id, url} },\n    series->{title, slug}\n  }\n': HomeLatestArticlesQueryResult;
     '\n  *[_type == "caseStudy"] | order(order asc, startDate desc) {\n    _id,\n    title,\n    slug,\n    role,\n    sector,\n    company,\n    heroImage { asset->{_id, url} },\n    stack,\n    startDate,\n    endDate\n  }\n': AllCaseStudiesQueryResult;

@@ -27,6 +27,8 @@ export const heroQuoteQuery = defineQuery(`
     company,
     quote,
     linkedinUrl,
+    recommendationUrl,
+    companyUrl,
     headshot { asset->{_id, url} }
   }
 `);
