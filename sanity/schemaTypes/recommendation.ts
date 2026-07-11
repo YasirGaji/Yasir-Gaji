@@ -11,6 +11,17 @@ export default defineType({
     defineField({ name: "date", type: "date" }),
     defineField({ name: "quote", type: "text", rows: 5, validation: (r) => r.required() }),
     defineField({ name: "linkedinUrl", type: "url" }),
+    defineField({
+      name: "recommendationUrl",
+      title: "Recommendation URL",
+      description: "Link to the original recommendation (e.g. on LinkedIn)",
+      type: "url",
+    }),
+    defineField({
+      name: "companyUrl",
+      title: "Company URL",
+      type: "url",
+    }),
     defineField({ name: "headshot", type: "image", options: { hotspot: true } }),
     defineField({
       name: "isHeroQuote",

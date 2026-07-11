@@ -1,13 +1,16 @@
 import { type PortableTextComponents, PortableText as PTReact } from "@portabletext/react";
 import Image from "next/image";
-import { codeToHtml } from "shiki";
+import { bundledLanguages, codeToHtml } from "shiki";
 import { urlForImage } from "@/sanity/lib/image";
 
 type CodeBlock = { _type: "codeBlock"; language?: string; code: string };
 
 async function CodeBlock({ block }: { block: CodeBlock }) {
-  const html = await codeToHtml(block.code, {
-    lang: block.language || "ts",
+  // CMS-entered languages can have typos/whitespace ("javscript", "javascript ");
+  // an unknown lang makes codeToHtml throw and crash the whole page.
+  const lang = block.language?.trim().toLowerCase();
+  const html = await codeToHtml(block.code ?? "", {
+    lang: lang && lang in bundledLanguages ? lang : "text",
     theme: "github-dark-dimmed",
   });
   return (
