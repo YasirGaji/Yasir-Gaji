@@ -36,7 +36,7 @@ export async function ModeShell({ children }: { children: React.ReactNode }) {
             width={1134}
             height={446}
             sizes="100vw"
-            className="h-auto w-full opacity-20 invert mask-[linear-gradient(to_bottom,black_35%,transparent)] dark-editorial:opacity-15 dark-editorial:invert-0"
+            className="h-[70svh] w-full object-cover opacity-20 invert mask-[linear-gradient(to_bottom,black_35%,transparent)] md:h-auto dark-editorial:opacity-15 dark-editorial:invert-0"
           />
         </div>
         {children}
